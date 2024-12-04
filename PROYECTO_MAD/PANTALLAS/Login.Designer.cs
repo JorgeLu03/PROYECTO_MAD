@@ -43,6 +43,7 @@
             this.TB_USER.Name = "TB_USER";
             this.TB_USER.Size = new System.Drawing.Size(207, 22);
             this.TB_USER.TabIndex = 0;
+            this.TB_USER.TextChanged += new System.EventHandler(this.TB_USER_TextChanged);
             // 
             // TB_PSW
             // 

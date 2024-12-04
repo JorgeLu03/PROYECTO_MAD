@@ -54,6 +54,7 @@
     <Compile Include="CONEXIÓN\Conexion.cs" />
     <Compile Include="DAO\DepartamentosDAO.cs" />
     <Compile Include="DAO\EmpleadoDAO.cs" />
+    <Compile Include="DAO\NomGralDAO.cs" />
     <Compile Include="DAO\PantallasDAO.cs" />
     <Compile Include="DAO\PuestosDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />

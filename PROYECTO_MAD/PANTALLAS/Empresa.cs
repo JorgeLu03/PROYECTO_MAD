@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROYECTO_MAD.MODELOS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,13 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Empresa_Load(object sender, EventArgs e)
         {
+            Modelo_Empresa empresa = new Modelo_Empresa();
 
+            TB_RFC.Text = empresa.RFC;
+            TB_RAZSOC.Text = empresa.RAZSOC;
+            TB_DOMFISC.Text = empresa.DOMFISC;
+            TB_NUMCONT.Text = empresa.CONTACT;
+            TB_REGPAT.Text = empresa.REGPAT.ToString();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

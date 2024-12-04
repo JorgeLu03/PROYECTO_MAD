@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using PROYECTO_MAD.CONEXIÓN;
 using PROYECTO_MAD.MODELOS;
+using PROYECTO_MAD.PANTALLAS;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -36,6 +37,42 @@ namespace PROYECTO_MAD.DAO
             Conexion.Disconnect();
 
             return data;
+        }
+
+         public static List<Modelo_Puestos> sp_get_puestoEmpleado2(string Puesto)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Puestos>(
+                "SP_GET_PUESTOEMPLEADO2",
+                new
+                {
+                    @Buscar = Puesto,
+
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
+        }
+
+        public static void sp_gestion_puesto(Modelo_Puestos puesto, string OPC)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Puestos>("SP_GESTION_PUESTO",
+                new
+                {
+                    @ID_Puesto = puesto.ID_Puesto,
+                    @Nombre = puesto.Nombre,
+                    @NivelSalarial = puesto.NivelSalarial,
+                    @ID_Departamento = puesto.ID_Departamento,
+                    @OPC = OPC
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
         }
     }
 }

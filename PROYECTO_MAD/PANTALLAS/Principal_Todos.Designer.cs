@@ -44,7 +44,7 @@
             // 
             // BTN_GESDEP
             // 
-            this.BTN_GESDEP.Location = new System.Drawing.Point(68, 45);
+            this.BTN_GESDEP.Location = new System.Drawing.Point(68, 107);
             this.BTN_GESDEP.Name = "BTN_GESDEP";
             this.BTN_GESDEP.Size = new System.Drawing.Size(130, 42);
             this.BTN_GESDEP.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // BTN_GESEMPL
             // 
-            this.BTN_GESEMPL.Location = new System.Drawing.Point(68, 93);
+            this.BTN_GESEMPL.Location = new System.Drawing.Point(68, 155);
             this.BTN_GESEMPL.Name = "BTN_GESEMPL";
             this.BTN_GESEMPL.Size = new System.Drawing.Size(130, 42);
             this.BTN_GESEMPL.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // BTN_PUES
             // 
-            this.BTN_PUES.Location = new System.Drawing.Point(226, 93);
+            this.BTN_PUES.Location = new System.Drawing.Point(226, 155);
             this.BTN_PUES.Name = "BTN_PUES";
             this.BTN_PUES.Size = new System.Drawing.Size(130, 42);
             this.BTN_PUES.TabIndex = 4;
@@ -74,7 +74,7 @@
             // 
             // BTN_NOM
             // 
-            this.BTN_NOM.Location = new System.Drawing.Point(226, 45);
+            this.BTN_NOM.Location = new System.Drawing.Point(226, 107);
             this.BTN_NOM.Name = "BTN_NOM";
             this.BTN_NOM.Size = new System.Drawing.Size(130, 42);
             this.BTN_NOM.TabIndex = 5;
@@ -84,7 +84,7 @@
             // 
             // BTN_NOMGEN
             // 
-            this.BTN_NOMGEN.Location = new System.Drawing.Point(226, 189);
+            this.BTN_NOMGEN.Location = new System.Drawing.Point(226, 251);
             this.BTN_NOMGEN.Name = "BTN_NOMGEN";
             this.BTN_NOMGEN.Size = new System.Drawing.Size(130, 42);
             this.BTN_NOMGEN.TabIndex = 6;
@@ -94,7 +94,7 @@
             // 
             // BTN_GESPUES
             // 
-            this.BTN_GESPUES.Location = new System.Drawing.Point(226, 141);
+            this.BTN_GESPUES.Location = new System.Drawing.Point(226, 203);
             this.BTN_GESPUES.Name = "BTN_GESPUES";
             this.BTN_GESPUES.Size = new System.Drawing.Size(130, 42);
             this.BTN_GESPUES.TabIndex = 7;
@@ -104,7 +104,7 @@
             // 
             // BTN_EMP
             // 
-            this.BTN_EMP.Location = new System.Drawing.Point(146, 326);
+            this.BTN_EMP.Location = new System.Drawing.Point(146, 349);
             this.BTN_EMP.Name = "BTN_EMP";
             this.BTN_EMP.Size = new System.Drawing.Size(130, 42);
             this.BTN_EMP.TabIndex = 8;
@@ -114,7 +114,7 @@
             // 
             // BTN_PERC
             // 
-            this.BTN_PERC.Location = new System.Drawing.Point(68, 189);
+            this.BTN_PERC.Location = new System.Drawing.Point(68, 251);
             this.BTN_PERC.Name = "BTN_PERC";
             this.BTN_PERC.Size = new System.Drawing.Size(130, 42);
             this.BTN_PERC.TabIndex = 9;
@@ -124,7 +124,7 @@
             // 
             // BTN_GESEMPR
             // 
-            this.BTN_GESEMPR.Location = new System.Drawing.Point(68, 141);
+            this.BTN_GESEMPR.Location = new System.Drawing.Point(68, 203);
             this.BTN_GESEMPR.Name = "BTN_GESEMPR";
             this.BTN_GESEMPR.Size = new System.Drawing.Size(130, 42);
             this.BTN_GESEMPR.TabIndex = 10;
@@ -155,7 +155,7 @@
             // LB_PUESTO
             // 
             this.LB_PUESTO.AutoSize = true;
-            this.LB_PUESTO.Location = new System.Drawing.Point(34, 33);
+            this.LB_PUESTO.Location = new System.Drawing.Point(31, 29);
             this.LB_PUESTO.Name = "LB_PUESTO";
             this.LB_PUESTO.Size = new System.Drawing.Size(44, 16);
             this.LB_PUESTO.TabIndex = 13;

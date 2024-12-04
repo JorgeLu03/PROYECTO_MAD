@@ -28,5 +28,10 @@ namespace PROYECTO_MAD.PANTALLAS
             Principal_Todos pantallaPrincipal = new Principal_Todos();
             pantallaPrincipal.ShowDialog();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

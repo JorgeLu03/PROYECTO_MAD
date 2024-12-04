@@ -87,6 +87,18 @@ namespace PROYECTO_MAD.PANTALLAS
             {
                 BTN_EMP.Enabled = false;
             }
+            else
+            {
+                BTN_GESDEP.Enabled = false;
+                BTN_GESEMPL.Enabled = false;
+                BTN_GESEMPR.Enabled = false;
+                BTN_GESPUES.Enabled = false;
+                BTN_NOM.Enabled = false;
+                BTN_NOMGEN.Enabled = false;
+                BTN_PERC.Enabled = false;
+                BTN_PUES.Enabled = false;
+
+            }
             LB_NOMBRE.Text = Sesion.empleado.Nombre_Completo;
             string PuestoLabel=Convert.ToString(Sesion.empleado.PuestoID);
             

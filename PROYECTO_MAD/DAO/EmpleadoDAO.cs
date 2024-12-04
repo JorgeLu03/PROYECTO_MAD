@@ -19,25 +19,26 @@ namespace PROYECTO_MAD.DAO
             var data = Conexion.db.Query<Modelo_Empleados>("SP_GESTION_EMPLEADO",
                 new
                 {
-                    @Num_Empleado = empleado.Num_Empleado ,
-                    @Nombre_Completo = empleado.Nombre_Completo ,
-                    @Fecha_Nac = empleado.Fecha_Nac ,
-                    @CURP = empleado.CURP ,
+                    @Num_Empleado = empleado.Num_Empleado,
+                    @Nombre_Completo = empleado.Nombre_Completo,
+                    @Fecha_Nac = empleado.Fecha_Nac,
+                    @CURP = empleado.CURP,
                     @Email = empleado.Email,
-                    @ApellidoM=empleado.ApellidoMaterno,
-                    @ApellidoP=empleado.ApellidoPaterno,
-                    @NSS=empleado.NSS ,
-                    @RFC=empleado.RFC ,
-                    @Tel=empleado.Telefono,
-                    @PSWD=empleado.Contraseña,
-                    @Domicilio=empleado.DomicilioCompleto,
-                    @Banco=empleado.Banco,
-                    @FechaIngreso=empleado.FechaIngreso,
-                    @PuestoID=empleado.PuestoID,
-                    @DepartamentoID=empleado.DepartamentoID,
+                    @ApellidoMaterno = empleado.ApellidoMaterno,
+                    @ApellidoPaterno = empleado.ApellidoPaterno,
+                    @NSS = empleado.NSS,
+                    @RFC = empleado.RFC,
+                    @Telefono = empleado.Telefono,
+                    @Contraseña = empleado.Contraseña,
+                    @DomicilioCompleto = empleado.DomicilioCompleto,
+                    @Banco = empleado.Banco,
+                    @FechaIngreso = empleado.FechaIngreso,
+                    @PuestoID = empleado.PuestoID,
+                    @DepartamentoID = empleado.DepartamentoID,
+                    @NumeroCuenta = empleado.NumeroCuenta,
                     @OPC = OPC
                 },
-                commandType: CommandType.StoredProcedure); ;
+                commandType: CommandType.StoredProcedure);
 
             Conexion.Disconnect();
         }

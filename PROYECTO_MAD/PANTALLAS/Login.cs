@@ -61,5 +61,10 @@ namespace PROYECTO_MAD.PANTALLAS
             }
 
         }
+
+        private void TB_USER_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
