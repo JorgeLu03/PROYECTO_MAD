@@ -8,11 +8,11 @@ namespace PROYECTO_MAD.MODELOS
 {
     public class Modelo_Puestos
     {
-        // Propiedades
-        public int ID_Puesto { get; set; }
-        public string Nombre { get; set; }
-        public decimal NivelSalarial { get; set; }
-        public int ID_Departamento { get; set; }
+        public int id_puesto { get; set; }
+        public int id_departamento { get; set; }
+        public string nombre_puesto { get; set; }
+        public decimal proporcion_sueldo { get; set; }
+        public bool activo { get; set; }
 
         // Constructor por defecto
         public Modelo_Puestos()
@@ -20,13 +20,15 @@ namespace PROYECTO_MAD.MODELOS
         }
 
         // Constructor con parámetros
-        public Modelo_Puestos(int id_Puesto, string nombre, decimal nivelSalarial, int id_Departamento)
+        public Modelo_Puestos(int id_puesto, int id_departamento, string nombre_puesto, decimal proporcion_sueldo, bool activo)
         {
-            ID_Puesto = id_Puesto;
-            Nombre = nombre;
-            NivelSalarial = nivelSalarial;
-            ID_Departamento = id_Departamento;
+            this.id_puesto = id_puesto;
+            this.id_departamento = id_departamento;
+            this.nombre_puesto = nombre_puesto;
+            this.proporcion_sueldo = proporcion_sueldo;
+            this.activo = activo;
         }
+
     }
 
 }

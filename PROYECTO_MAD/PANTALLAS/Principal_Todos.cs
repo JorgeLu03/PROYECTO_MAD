@@ -83,7 +83,7 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Principal_Todos_Load(object sender, EventArgs e)
         {
-            if (Sesion.empleado.PuestoID != 1002)
+            if (Sesion.empleado.id_puesto != 1002)
             {
                 BTN_EMP.Enabled = false;
             }
@@ -99,9 +99,10 @@ namespace PROYECTO_MAD.PANTALLAS
                 BTN_PUES.Enabled = false;
 
             }
-            LB_NOMBRE.Text = Sesion.empleado.Nombre_Completo;
-            string PuestoLabel=Convert.ToString(Sesion.empleado.PuestoID);
-            
+            string nombreCompleto = $"{Sesion.empleado.nombre} {Sesion.empleado.apellido_paterno} {Sesion.empleado.apellido_materno}";
+            LB_NOMBRE.Text = nombreCompleto;
+            string PuestoLabel = Convert.ToString(Sesion.empleado.id_puesto);
+
             LB_PUESTO.Text = PuestoLabel;
         }
 

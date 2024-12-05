@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROYECTO_MAD.Entidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,52 +10,55 @@ namespace PROYECTO_MAD.MODELOS
 {
     public class Modelo_Empleados
     {
-        public int Num_Empleado { get; set; }
-        public string Nombre_Completo { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public DateTime Fecha_Nac { get; set; }
-        public string CURP { get; set; }
-        public string Email { get; set; }
-        public string NSS { get; set; }
-        public string RFC { get; set; }
-        public string Telefono { get; set; }
-        public string Contraseña { get; set; }
-        public string DomicilioCompleto { get; set; }
-        public string Banco { get; set; }
-        public string NumeroCuenta { get; set; }
-        public DateTime FechaIngreso { get; set; }
-        public int PuestoID { get; set; }
-        public int DepartamentoID { get; set; }
+        public int id_empleado { get; set; }
+        public int id_empresa { get; set; }
+        public int id_departamento { get; set; }
+        public int id_puesto { get; set; }
+        public string usuario { get; set; }
+        public string contrasena { get; set; }
+        public string nombre { get; set; }
+        public string apellido_paterno { get; set; }
+        public string apellido_materno { get; set; }
+        public DateTime fecha_nacimiento { get; set; }
+        public string curp { get; set; }
+        public string nss { get; set; }
+        public string rfc { get; set; }
+        public string domicilio { get; set; }
+        public string banco { get; set; }
+        public string numero_cuenta { get; set; }
+        public string email { get; set; }
+        public string telefono { get; set; }
+        public DateTime fecha_contratacion { get; set; }
+        public bool activo { get; set; }
 
         public Modelo_Empleados()
         {
-            FechaIngreso = DateTime.Now;
-            Fecha_Nac = DateTime.Now;
+            fecha_contratacion = DateTime.Now;
+            fecha_nacimiento = DateTime.Now;
         }
-        // Constructor completo
-        public Modelo_Empleados(int num_Empleado, string nombre_Completo, string apellidoPaterno, string apellidoMaterno,
-                                 DateTime fecha_Nac, string cURP, string email, string nSS, string rFC,
-                                 string telefono, string contraseña, string domicilioCompleto, string banco,
-                                 string numeroCuenta, DateTime fechaIngreso, int puestoID, int departamentoID)
+
+        public Modelo_Empleados(int id_empleado, int id_empresa, int id_departamento, int id_puesto, string usuario, string contrasena, string nombre, string apellido_paterno, string apellido_materno, DateTime fecha_nacimiento, string curp, string nss, string rfc, string domicilio, string banco, string numero_cuenta, string email, string telefono, DateTime fecha_contratacion, bool activo)
         {
-            Num_Empleado = num_Empleado;
-            Nombre_Completo = nombre_Completo;
-            ApellidoPaterno = apellidoPaterno;
-            ApellidoMaterno = apellidoMaterno;
-            Fecha_Nac = fecha_Nac;
-            CURP = cURP;
-            Email = email;
-            NSS = nSS;
-            RFC = rFC;
-            Telefono = telefono;
-            Contraseña = contraseña;
-            DomicilioCompleto = domicilioCompleto;
-            Banco = banco;
-            NumeroCuenta = numeroCuenta;
-            FechaIngreso = fechaIngreso;
-            PuestoID = puestoID;
-            DepartamentoID = departamentoID;
+            this.id_empleado = id_empleado;
+            this.id_empresa = id_empresa;
+            this.id_departamento = id_departamento;
+            this.id_puesto = id_puesto;
+            this.usuario = usuario;
+            this.contrasena = contrasena;
+            this.nombre = nombre;
+            this.apellido_paterno = apellido_paterno;
+            this.apellido_materno = apellido_materno;
+            this.fecha_nacimiento = fecha_nacimiento;
+            this.curp = curp;
+            this.nss = nss;
+            this.rfc = rfc;
+            this.domicilio = domicilio;
+            this.banco = banco;
+            this.numero_cuenta = numero_cuenta;
+            this.email = email;
+            this.telefono = telefono;
+            this.fecha_contratacion = fecha_contratacion;
+            this.activo = activo;
         }
     }
 }

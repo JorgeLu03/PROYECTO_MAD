@@ -49,9 +49,9 @@ namespace PROYECTO_MAD.PANTALLAS
         {
             Modelo_Puestos puesto = new Modelo_Puestos();
 
-            puesto.Nombre = TB_PUESTO.Text;
-            puesto.NivelSalarial = decimal.Parse (TB_SALARIO.Text);
-            puesto.ID_Departamento=(int)CB_NOMPUES.SelectedValue;
+            //puesto.Nombre = TB_PUESTO.Text;
+            //puesto.NivelSalarial = decimal.Parse (TB_SALARIO.Text);
+            //puesto.ID_Departamento=(int)CB_NOMPUES.SelectedValue;
             PuestosDAO.sp_gestion_puesto(puesto, "AGREGAR");
             Puestos_Load(sender, e);
         }
@@ -66,7 +66,7 @@ namespace PROYECTO_MAD.PANTALLAS
             if (sel_idPuesto != -1)
             {
                 Modelo_Puestos puesto = new Modelo_Puestos();
-                puesto.ID_Puesto = sel_idPuesto;
+                //puesto.ID_Puesto = sel_idPuesto;
 
                 try
                 {
@@ -106,10 +106,10 @@ namespace PROYECTO_MAD.PANTALLAS
                 Modelo_Puestos puesto = new Modelo_Puestos();
 
                 // Llenar las propiedades del modelo con los valores seleccionados en el DataGridView
-                puesto.ID_Puesto = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Puesto"].Value.ToString());
-                puesto.Nombre = DG_3.Rows[sel_numRow].Cells["Nombre"].Value.ToString();
-                puesto.NivelSalarial = decimal.Parse(DG_3.Rows[sel_numRow].Cells["NivelSalarial"].Value.ToString());
-                puesto.ID_Departamento = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Departamento"].Value.ToString());
+                //puesto.ID_Puesto = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Puesto"].Value.ToString());
+                //puesto.Nombre = DG_3.Rows[sel_numRow].Cells["Nombre"].Value.ToString();
+                //puesto.NivelSalarial = decimal.Parse(DG_3.Rows[sel_numRow].Cells["NivelSalarial"].Value.ToString());
+                //puesto.ID_Departamento = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Departamento"].Value.ToString());
 
                 // Restablecer la fila seleccionada
                 sel_numRow = -1;

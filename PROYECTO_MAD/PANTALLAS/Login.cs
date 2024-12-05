@@ -27,29 +27,32 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Login_Load(object sender, EventArgs e)
         {
-            List<Modelo_Puestos> puestos = PuestosDAO.get_puestos();
+            List<Modelo_Puestos> puestos = PuestosDAO.sp_get_puestos("");
             CB_TIPO.DataSource = puestos;
-            CB_TIPO.DisplayMember = "Nombre";
-            CB_TIPO.ValueMember = "ID_Puesto";       
+            CB_TIPO.DisplayMember = "nombre_puesto";
+            CB_TIPO.ValueMember = "id_puesto";
         }
 
         private void BTN_INICSES_Click(object sender, EventArgs e)
         {
-            int tipo = (int)CB_TIPO.SelectedValue;
-            string usuario= TB_USER.Text;
-            string contraseña = TB_PSW.Text;
+            Modelo_Empleados login = new Modelo_Empleados();
+            login.usuario = TB_USER.Text;
+            login.contrasena = TB_PSW.Text;
+            login.id_puesto = (int)CB_TIPO.SelectedValue;
 
             // Llamar al procedimiento almacenado
-            Modelo_Empleados empleado = EmpleadoDAO.sp_get_empleado_login(usuario, contraseña,tipo);
+            Modelo_Empleados empleado = EmpleadoDAO.sp_get_empleado_login(login);
 
             if (empleado != null)
             {
-               Modelo_Departamentos departamento = DepartamentosDAO.sp_get_departamento(empleado.DepartamentoID);
-               Modelo_Puestos puesto = PuestosDAO.sp_get_puestoEmpleado(empleado.PuestoID);
-
-
-                MessageBox.Show($"¡Bienvenido {empleado.Nombre_Completo}!", "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Modelo_Departamentos departamento = DepartamentosDAO.sp_get_departamento_login(empleado.id_departamento);
+                Modelo_Puestos puesto = PuestosDAO.sp_get_puesto_login(empleado.id_puesto);
+                string nombreCompleto = $"{empleado.nombre} {empleado.apellido_paterno} {empleado.apellido_materno}";
+                
+                MessageBox.Show($"¡Bienvenido {nombreCompleto}!", "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Sesion.empleado = empleado;
+                Sesion.puesto = puesto;
+                Sesion.departamento = departamento;
                 this.Hide();
                 Principal_Todos pantallaPrincipal = new Principal_Todos();
                 pantallaPrincipal.ShowDialog();

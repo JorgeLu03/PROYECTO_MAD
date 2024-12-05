@@ -16,29 +16,29 @@ namespace PROYECTO_MAD.DAO
         {
             Conexion.Connect();
 
-            var data = Conexion.db.Query<Modelo_Empleados>("SP_GESTION_EMPLEADO",
-                new
-                {
-                    @Num_Empleado = empleado.Num_Empleado,
-                    @Nombre_Completo = empleado.Nombre_Completo,
-                    @Fecha_Nac = empleado.Fecha_Nac,
-                    @CURP = empleado.CURP,
-                    @Email = empleado.Email,
-                    @ApellidoMaterno = empleado.ApellidoMaterno,
-                    @ApellidoPaterno = empleado.ApellidoPaterno,
-                    @NSS = empleado.NSS,
-                    @RFC = empleado.RFC,
-                    @Telefono = empleado.Telefono,
-                    @Contraseña = empleado.Contraseña,
-                    @DomicilioCompleto = empleado.DomicilioCompleto,
-                    @Banco = empleado.Banco,
-                    @FechaIngreso = empleado.FechaIngreso,
-                    @PuestoID = empleado.PuestoID,
-                    @DepartamentoID = empleado.DepartamentoID,
-                    @NumeroCuenta = empleado.NumeroCuenta,
-                    @OPC = OPC
-                },
-                commandType: CommandType.StoredProcedure);
+            //var data = Conexion.db.Query<Modelo_Empleados>("SP_GESTION_EMPLEADO",
+            //    new
+            //    {
+            //        @Num_Empleado = empleado.Num_Empleado,
+            //        @Nombre_Completo = empleado.Nombre_Completo,
+            //        @Fecha_Nac = empleado.Fecha_Nac,
+            //        @CURP = empleado.CURP,
+            //        @Email = empleado.Email,
+            //        @ApellidoMaterno = empleado.ApellidoMaterno,
+            //        @ApellidoPaterno = empleado.ApellidoPaterno,
+            //        @NSS = empleado.NSS,
+            //        @RFC = empleado.RFC,
+            //        @Telefono = empleado.Telefono,
+            //        @Contraseña = empleado.Contraseña,
+            //        @DomicilioCompleto = empleado.DomicilioCompleto,
+            //        @Banco = empleado.Banco,
+            //        @FechaIngreso = empleado.FechaIngreso,
+            //        @PuestoID = empleado.PuestoID,
+            //        @DepartamentoID = empleado.DepartamentoID,
+            //        @NumeroCuenta = empleado.NumeroCuenta,
+            //        @OPC = OPC
+            //    },
+            //    commandType: CommandType.StoredProcedure);
 
             Conexion.Disconnect();
         }
@@ -57,7 +57,7 @@ namespace PROYECTO_MAD.DAO
             Conexion.Disconnect();
             return data.ToList();
         }
-        public static Modelo_Empleados sp_get_empleado_login(string usuario, string contraseña, int tipo)
+        public static Modelo_Empleados sp_get_empleado_login(Modelo_Empleados emp)
         {
             Conexion.Connect();
 
@@ -65,9 +65,9 @@ namespace PROYECTO_MAD.DAO
                 "SP_GET_EMPLEADO_LOGIN",
                 new
                 {
-                    @Usuario = usuario,
-                    @Contraseña = contraseña,
-                    @Tipo = tipo
+                    @usuario = emp.usuario,
+                    @contrasena = emp.contrasena,
+                    @id_puesto = emp.id_puesto
                 },
                 commandType: CommandType.StoredProcedure);
 

@@ -30,22 +30,22 @@ namespace PROYECTO_MAD.PANTALLAS
                 return;
             Modelo_Empleados empleado = new Modelo_Empleados();
 
-            empleado.Nombre_Completo = TB_NOM.Text;
-            empleado.Fecha_Nac = DTP_FECHNAC.Value;
-            empleado.CURP = TB_CURP.Text;
-            empleado.Email = TB_EMAIL.Text;
-            empleado.ApellidoMaterno = TB_APMAT.Text;
-            empleado.ApellidoPaterno = TB_APPAT.Text;
-            empleado.NSS = TB_NSS.Text;
-            empleado.RFC = TB_RFC.Text;
-            empleado.Telefono = TB_TEL.Text;
-            empleado.Contraseña = TB_PSW.Text;
-            empleado.DomicilioCompleto = TB_DOM.Text;
-            empleado.Banco = TB_BANCO.Text;
-            empleado.NumeroCuenta = TB_NUMCUENTA.Text;
-            empleado.FechaIngreso = DateTime.Now;
-            empleado.PuestoID = (int)CB_PUESTO.SelectedValue;
-            empleado.DepartamentoID = (int)CB_DPTO.SelectedValue;
+            //empleado.Nombre_Completo = TB_NOM.Text;
+            //empleado.Fecha_Nac = DTP_FECHNAC.Value;
+            //empleado.CURP = TB_CURP.Text;
+            //empleado.Email = TB_EMAIL.Text;
+            //empleado.ApellidoMaterno = TB_APMAT.Text;
+            //empleado.ApellidoPaterno = TB_APPAT.Text;
+            //empleado.NSS = TB_NSS.Text;
+            //empleado.RFC = TB_RFC.Text;
+            //empleado.Telefono = TB_TEL.Text;
+            //empleado.Contraseña = TB_PSW.Text;
+            //empleado.DomicilioCompleto = TB_DOM.Text;
+            //empleado.Banco = TB_BANCO.Text;
+            //empleado.NumeroCuenta = TB_NUMCUENTA.Text;
+            //empleado.FechaIngreso = DateTime.Now;
+            //empleado.PuestoID = (int)CB_PUESTO.SelectedValue;
+            //empleado.DepartamentoID = (int)CB_DPTO.SelectedValue;
 
             EmpleadoDAO.sp_gestion_empleado(empleado,"AGREGAR");
             Principal_Load(sender,e);
@@ -59,23 +59,23 @@ namespace PROYECTO_MAD.PANTALLAS
             {
                 Modelo_Empleados empleado = new Modelo_Empleados();
 
-                empleado.Num_Empleado = int.Parse(DG_1.Rows[sel_numRow].Cells["NUM_EMPLEADO"].Value.ToString());
-                empleado.Nombre_Completo = DG_1.Rows[sel_numRow].Cells["NOMBRE_COMPLETO"].Value.ToString();
-                empleado.Fecha_Nac = Convert.ToDateTime(DG_1.Rows[sel_numRow].Cells["FECHA_NAC"].Value.ToString());
-                empleado.CURP = DG_1.Rows[sel_numRow].Cells["CURP"].Value.ToString();
-                empleado.Email = DG_1.Rows[sel_numRow].Cells["EMAIL"].Value.ToString();
-                empleado.ApellidoMaterno = DG_1.Rows[sel_numRow].Cells["ApellidoMaterno"].Value.ToString();
-                empleado.ApellidoPaterno = DG_1.Rows[sel_numRow].Cells["ApellidoPaterno"].Value.ToString();
-                empleado.NSS = DG_1.Rows[sel_numRow].Cells["NSS"].Value.ToString();
-                empleado.RFC = DG_1.Rows[sel_numRow].Cells["RFC"].Value.ToString();
-                empleado.Telefono = DG_1.Rows[sel_numRow].Cells["Telefono"].Value.ToString();
-                empleado.Contraseña = DG_1.Rows[sel_numRow].Cells["Contraseña"].Value.ToString();
-                empleado.DomicilioCompleto = DG_1.Rows[sel_numRow].Cells["DomicilioCompleto"].Value.ToString();
-                empleado.Banco = DG_1.Rows[sel_numRow].Cells["Banco"].Value.ToString();
-                empleado.NumeroCuenta = DG_1.Rows[sel_numRow].Cells["NumeroCuenta"].Value.ToString();
-                empleado.FechaIngreso = Convert.ToDateTime(DG_1.Rows[sel_numRow].Cells["FechaIngreso"].Value.ToString());
-                empleado.PuestoID = int.Parse(DG_1.Rows[sel_numRow].Cells["PuestoID"].Value.ToString());
-                empleado.DepartamentoID = int.Parse(DG_1.Rows[sel_numRow].Cells["DepartamentoID"].Value.ToString());
+                //empleado.Num_Empleado = int.Parse(DG_1.Rows[sel_numRow].Cells["NUM_EMPLEADO"].Value.ToString());
+                //empleado.Nombre_Completo = DG_1.Rows[sel_numRow].Cells["NOMBRE_COMPLETO"].Value.ToString();
+                //empleado.Fecha_Nac = Convert.ToDateTime(DG_1.Rows[sel_numRow].Cells["FECHA_NAC"].Value.ToString());
+                //empleado.CURP = DG_1.Rows[sel_numRow].Cells["CURP"].Value.ToString();
+                //empleado.Email = DG_1.Rows[sel_numRow].Cells["EMAIL"].Value.ToString();
+                //empleado.ApellidoMaterno = DG_1.Rows[sel_numRow].Cells["ApellidoMaterno"].Value.ToString();
+                //empleado.ApellidoPaterno = DG_1.Rows[sel_numRow].Cells["ApellidoPaterno"].Value.ToString();
+                //empleado.NSS = DG_1.Rows[sel_numRow].Cells["NSS"].Value.ToString();
+                //empleado.RFC = DG_1.Rows[sel_numRow].Cells["RFC"].Value.ToString();
+                //empleado.Telefono = DG_1.Rows[sel_numRow].Cells["Telefono"].Value.ToString();
+                //empleado.Contraseña = DG_1.Rows[sel_numRow].Cells["Contraseña"].Value.ToString();
+                //empleado.DomicilioCompleto = DG_1.Rows[sel_numRow].Cells["DomicilioCompleto"].Value.ToString();
+                //empleado.Banco = DG_1.Rows[sel_numRow].Cells["Banco"].Value.ToString();
+                //empleado.NumeroCuenta = DG_1.Rows[sel_numRow].Cells["NumeroCuenta"].Value.ToString();
+                //empleado.FechaIngreso = Convert.ToDateTime(DG_1.Rows[sel_numRow].Cells["FechaIngreso"].Value.ToString());
+                //empleado.PuestoID = int.Parse(DG_1.Rows[sel_numRow].Cells["PuestoID"].Value.ToString());
+                //empleado.DepartamentoID = int.Parse(DG_1.Rows[sel_numRow].Cells["DepartamentoID"].Value.ToString());
 
                 sel_numRow = -1;
                 EmpleadoDAO.sp_gestion_empleado(empleado, "MODIFICAR");
@@ -93,7 +93,7 @@ namespace PROYECTO_MAD.PANTALLAS
             if (sel_idEmpleado != -1)
             {
                 Modelo_Empleados empleado = new Modelo_Empleados();
-                empleado.Num_Empleado = sel_idEmpleado;
+                //empleado.Num_Empleado = sel_idEmpleado;
 
                 try
                 {

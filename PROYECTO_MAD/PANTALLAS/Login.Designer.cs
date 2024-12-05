@@ -39,61 +39,68 @@
             // 
             // TB_USER
             // 
-            this.TB_USER.Location = new System.Drawing.Point(114, 106);
+            this.TB_USER.Location = new System.Drawing.Point(86, 86);
+            this.TB_USER.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TB_USER.Name = "TB_USER";
-            this.TB_USER.Size = new System.Drawing.Size(207, 22);
+            this.TB_USER.Size = new System.Drawing.Size(198, 20);
             this.TB_USER.TabIndex = 0;
             this.TB_USER.TextChanged += new System.EventHandler(this.TB_USER_TextChanged);
             // 
             // TB_PSW
             // 
-            this.TB_PSW.Location = new System.Drawing.Point(114, 162);
+            this.TB_PSW.Location = new System.Drawing.Point(86, 132);
+            this.TB_PSW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TB_PSW.Name = "TB_PSW";
             this.TB_PSW.PasswordChar = '*';
-            this.TB_PSW.Size = new System.Drawing.Size(207, 22);
+            this.TB_PSW.Size = new System.Drawing.Size(198, 20);
             this.TB_PSW.TabIndex = 1;
             // 
             // Usuario
             // 
             this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(51, 112);
+            this.Usuario.Location = new System.Drawing.Point(38, 91);
+            this.Usuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(57, 16);
+            this.Usuario.Size = new System.Drawing.Size(46, 13);
             this.Usuario.TabIndex = 2;
             this.Usuario.Text = "Usuario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 168);
+            this.label2.Location = new System.Drawing.Point(22, 136);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña:";
             // 
             // CB_TIPO
             // 
             this.CB_TIPO.FormattingEnabled = true;
-            this.CB_TIPO.Location = new System.Drawing.Point(114, 48);
+            this.CB_TIPO.Location = new System.Drawing.Point(86, 39);
+            this.CB_TIPO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CB_TIPO.Name = "CB_TIPO";
-            this.CB_TIPO.Size = new System.Drawing.Size(111, 24);
+            this.CB_TIPO.Size = new System.Drawing.Size(198, 21);
             this.CB_TIPO.TabIndex = 4;
             this.CB_TIPO.SelectedIndexChanged += new System.EventHandler(this.CB_TIPO_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 56);
+            this.label1.Location = new System.Drawing.Point(52, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tipo:";
             // 
             // BTN_INICSES
             // 
-            this.BTN_INICSES.Location = new System.Drawing.Point(114, 206);
+            this.BTN_INICSES.Location = new System.Drawing.Point(86, 167);
+            this.BTN_INICSES.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTN_INICSES.Name = "BTN_INICSES";
-            this.BTN_INICSES.Size = new System.Drawing.Size(77, 30);
+            this.BTN_INICSES.Size = new System.Drawing.Size(58, 24);
             this.BTN_INICSES.TabIndex = 6;
             this.BTN_INICSES.Text = "Ingresar";
             this.BTN_INICSES.UseVisualStyleBackColor = true;
@@ -101,9 +108,9 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 274);
+            this.ClientSize = new System.Drawing.Size(343, 223);
             this.Controls.Add(this.BTN_INICSES);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_TIPO);
@@ -111,6 +118,7 @@
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.TB_PSW);
             this.Controls.Add(this.TB_USER);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

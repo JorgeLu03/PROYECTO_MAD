@@ -21,15 +21,33 @@ namespace PROYECTO_MAD.DAO
             Conexion.Disconnect();
             return data.ToList();
         }
-        public static Modelo_Puestos sp_get_puestoEmpleado(int PUESTO)
+
+        public static List<Modelo_Puestos> sp_get_puestos(string Puesto)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Puestos>(
+                "SP_GET_PUESTOS",
+                new
+                {
+                    @Buscar = Puesto,
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
+        }
+
+        public static Modelo_Puestos sp_get_puesto_login(int id_puesto)
         {
             Conexion.Connect();
 
             var data = Conexion.db.QueryFirstOrDefault<Modelo_Puestos>(
-                "SP_GET_PUESTOEMPLEADO",
+                "SP_GET_PUESTO_LOGIN",
                 new
                 {
-                    @Puesto = PUESTO,
+                    @id_puesto = id_puesto,
 
                 },
                 commandType: CommandType.StoredProcedure);
@@ -39,7 +57,7 @@ namespace PROYECTO_MAD.DAO
             return data;
         }
 
-         public static List<Modelo_Puestos> sp_get_puestoEmpleado2(string Puesto)
+        public static List<Modelo_Puestos> sp_get_puestoEmpleado2(string Puesto)
         {
             Conexion.Connect();
 
@@ -64,11 +82,11 @@ namespace PROYECTO_MAD.DAO
             var data = Conexion.db.Query<Modelo_Puestos>("SP_GESTION_PUESTO",
                 new
                 {
-                    @ID_Puesto = puesto.ID_Puesto,
-                    @Nombre = puesto.Nombre,
-                    @NivelSalarial = puesto.NivelSalarial,
-                    @ID_Departamento = puesto.ID_Departamento,
-                    @OPC = OPC
+                    //@ID_Puesto = puesto.ID_Puesto,
+                    //@Nombre = puesto.Nombre,
+                    //@NivelSalarial = puesto.NivelSalarial,
+                    //@ID_Departamento = puesto.ID_Departamento,
+                    //@OPC = OPC
                 },
                 commandType: CommandType.StoredProcedure);
 

@@ -11,7 +11,7 @@ namespace PROYECTO_MAD.Entidad
     public class Sesion
     {
         public static Modelo_Empleados empleado { get; set; }
-        public static Modelo_Departamentos departamentos { get; set; }
+        public static Modelo_Departamentos departamento { get; set; }
         public static Modelo_Puestos puesto { get; set; }
     }
 }

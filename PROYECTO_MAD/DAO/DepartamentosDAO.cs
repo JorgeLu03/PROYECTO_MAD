@@ -21,15 +21,15 @@ namespace PROYECTO_MAD.DAO
             return data.ToList();
         }
 
-        public static Modelo_Departamentos sp_get_departamento(int Dpto)
+        public static Modelo_Departamentos sp_get_departamento_login(int id_departamento)
         {
             Conexion.Connect();
 
             var data = Conexion.db.QueryFirstOrDefault<Modelo_Departamentos>(
-                "SP_GET_DEPARTAMENTO",
+                "SP_GET_DEPARTAMENTO_LOGIN",
                 new
                 {
-                    @DepartamentoID = Dpto,
+                    @id_departamento = id_departamento,
 
                 },
                 commandType: CommandType.StoredProcedure);
