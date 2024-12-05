@@ -92,20 +92,28 @@ namespace PROYECTO_MAD.PANTALLAS
             if (sel_numRow != -1) // Asegúrate de que se ha seleccionado una fila
             {
                 // Crear una instancia del modelo de departamentos
-                Modelo_Departamentos departamento = new Modelo_Departamentos();
+                Modelo_Departamentos dpto = new Modelo_Departamentos();
 
                 // Llenar las propiedades del modelo con los valores seleccionados en el DataGridView
-                departamento.id_departamento = departamentoSeleccionado.id_departamento;
-                departamento.nombre_departamento = TB_DEP.Text;
-                departamento.sueldo_base_diario = decimal.Parse(TB_SUELDO.Text);
-                departamento.id_empresa = departamentoSeleccionado.id_empresa;
-                departamento.activo = departamentoSeleccionado.activo;
+                dpto.id_departamento = departamentoSeleccionado.id_departamento;
+                dpto.nombre_departamento = TB_DEP.Text;
+                dpto.sueldo_base_diario = decimal.Parse(TB_SUELDO.Text);
+                dpto.id_empresa = departamentoSeleccionado.id_empresa;
+                dpto.activo = departamentoSeleccionado.activo;
+
+                Modelo_Departamentos existe = departamentosData.FirstOrDefault(x => x.nombre_departamento == dpto.nombre_departamento && x.activo == true);
+
+                if (existe != null)
+                {
+                    MessageBox.Show("Ya existe un departamento con ese nombre, jaja saludos.");
+                    return;
+                }
 
                 // Restablecer la fila seleccionada
                 sel_numRow = -1;
 
                 // Llamar al procedimiento almacenado para modificar el departamento
-                DepartamentosDAO.sp_gestion_departamento(departamento, "MODIFICAR");
+                DepartamentosDAO.sp_gestion_departamento(dpto, "MODIFICAR");
                 MessageBox.Show("Departamento modificado");
 
                 // Recargar la interfaz principal
