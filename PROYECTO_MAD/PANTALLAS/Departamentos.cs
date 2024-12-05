@@ -9,18 +9,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PROYECTO_MAD.PANTALLAS
 {
     public partial class Departamentos : Form
     {
+        List<Modelo_Departamentos> departamentosData = new List<Modelo_Departamentos>();
+        Modelo_Departamentos departamentoSeleccionado = new Modelo_Departamentos();
         int sel_idDpto = -1;
         int sel_numRow = -1;
-        Modelo_Departamentos departamentoSeleccionado = new Modelo_Departamentos();
 
         public Departamentos()
         {
             InitializeComponent();
+        }
+
+        private void Departamentos_Load(object sender, EventArgs e)
+        {
+            TB_DEP.Text = "";
+            TB_SUELDO.Text = "";
+            BTN_ADD.Enabled = true;
+            BTN_EDIT.Enabled = false;
+            BTN_ELIM.Enabled = false;
+
+            departamentosData = DepartamentosDAO.sp_get_departamentos("");
+            DG_2.DataSource = departamentosData;
         }
 
         private void Departamentos_FormClosed(object sender, FormClosedEventArgs e)
@@ -30,52 +44,10 @@ namespace PROYECTO_MAD.PANTALLAS
             pantallaPrincipal.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TB_BUSCAR_TextChanged(object sender, EventArgs e)
         {
-
-        }
-        private void Departamentos_Load(object sender, EventArgs e)
-        {
-            List<Modelo_Departamentos> departamentosData = DepartamentosDAO.sp_get_departamento2("");
+            List<Modelo_Departamentos> departamentosData = DepartamentosDAO.sp_get_departamentos(TB_BUSCAR.Text);
             DG_2.DataSource = departamentosData;
-            TB_DEP.Enabled = false;
-            TB_SUELDO.Enabled = false;
-
-
-        }
-
-        private void BTN_ADD_Click(object sender, EventArgs e)
-        {
-            Modelo_Departamentos dpto = new Modelo_Departamentos();
-
-            dpto.Nombre = TB_DEP.Text;
-            dpto.SueldoBase = decimal.Parse(TB_SUELDO.Text);
-           
-            DepartamentosDAO.sp_gestion_departamento(dpto, "AGREGAR");
-            Departamentos_Load(sender, e);
-        }
-
-        private void BTN_ELIM_Click(object sender, EventArgs e)
-        {
-            if (sel_idDpto != -1)
-            {
-                Modelo_Departamentos dpto = new Modelo_Departamentos();
-                dpto.ID_Departamento = sel_idDpto;
-
-                try
-                {
-                    DepartamentosDAO.sp_gestion_departamento(dpto, "ELIMINAR");
-
-                    MessageBox.Show("El departamento ha sido dado de baja.");
-                    sel_idDpto = -1;
-
-                    Departamentos_Load(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
         }
 
         private void DG_2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -84,10 +56,35 @@ namespace PROYECTO_MAD.PANTALLAS
 
             if (sel_numRow < 0)
                 return;
-            sel_idDpto = int.Parse(DG_2.Rows[sel_numRow].Cells["ID_Departamento"].Value.ToString());
 
-            TB_DEP.Text = DG_2.Rows[sel_numRow].Cells["Nombre"].Value.ToString();
-            TB_SUELDO.Text = DG_2.Rows[sel_numRow].Cells["SueldoBase"].Value.ToString();
+            sel_idDpto = int.Parse(DG_2.Rows[sel_numRow].Cells["id_departamento"].Value.ToString());
+            departamentoSeleccionado = departamentosData.FirstOrDefault(x => x.id_departamento == sel_idDpto);
+
+            TB_DEP.Text = departamentoSeleccionado.nombre_departamento;
+            TB_SUELDO.Text = departamentoSeleccionado.sueldo_base_diario.ToString();
+
+            BTN_ADD.Enabled = false;
+            BTN_EDIT.Enabled = true;
+            BTN_ELIM.Enabled = true;
+        }
+
+        private void BTN_ADD_Click(object sender, EventArgs e)
+        {
+            Modelo_Departamentos dpto = new Modelo_Departamentos();
+
+            dpto.nombre_departamento = TB_DEP.Text;
+            dpto.sueldo_base_diario = decimal.Parse(TB_SUELDO.Text);
+
+            Modelo_Departamentos existe = departamentosData.FirstOrDefault(x => x.nombre_departamento == dpto.nombre_departamento && x.activo == true);
+
+            if(existe != null)
+            {
+                MessageBox.Show("Ya existe un departamento con ese nombre, jaja saludos.");
+                return;
+            }
+
+            DepartamentosDAO.sp_gestion_departamento(dpto, "AGREGAR");
+            Departamentos_Load(sender, e);
         }
 
         private void BTN_EDIT_Click(object sender, EventArgs e)
@@ -98,9 +95,11 @@ namespace PROYECTO_MAD.PANTALLAS
                 Modelo_Departamentos departamento = new Modelo_Departamentos();
 
                 // Llenar las propiedades del modelo con los valores seleccionados en el DataGridView
-                departamento.ID_Departamento = int.Parse(DG_2.Rows[sel_numRow].Cells["ID_Departamento"].Value.ToString());
-                departamento.Nombre = DG_2.Rows[sel_numRow].Cells["Nombre"].Value.ToString();
-                departamento.SueldoBase = decimal.Parse(DG_2.Rows[sel_numRow].Cells["SueldoBase"].Value.ToString());
+                departamento.id_departamento = departamentoSeleccionado.id_departamento;
+                departamento.nombre_departamento = TB_DEP.Text;
+                departamento.sueldo_base_diario = decimal.Parse(TB_SUELDO.Text);
+                departamento.id_empresa = departamentoSeleccionado.id_empresa;
+                departamento.activo = departamentoSeleccionado.activo;
 
                 // Restablecer la fila seleccionada
                 sel_numRow = -1;
@@ -118,5 +117,28 @@ namespace PROYECTO_MAD.PANTALLAS
                 MessageBox.Show("Selecciona un departamento para modificarlo");
             }
         }
+
+        private void BTN_ELIM_Click(object sender, EventArgs e)
+        {
+            if (sel_idDpto != -1)
+            {
+                Modelo_Departamentos dpto = new Modelo_Departamentos();
+                dpto.id_departamento = departamentoSeleccionado.id_departamento;
+
+                try
+                {
+                    DepartamentosDAO.sp_gestion_departamento(dpto, "ELIMINAR");
+                    MessageBox.Show("El departamento ha sido dado de baja.");
+                    sel_idDpto = -1;
+
+                    Departamentos_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
     }
 }

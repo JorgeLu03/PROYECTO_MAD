@@ -9,21 +9,24 @@ namespace PROYECTO_MAD.MODELOS
     public class Modelo_Departamentos
     {
         // Propiedades
-        public int ID_Departamento { get; set; }
-        public string Nombre { get; set; }
-        public decimal SueldoBase { get; set; }
+        public int id_departamento { get; set; }
+        public int id_empresa { get; set; }
+        public string nombre_departamento { get; set; }
+        public decimal sueldo_base_diario { get; set; }
+        public bool activo { get; set; }
 
         // Constructor por defecto
         public Modelo_Departamentos()
         {
         }
 
-        // Constructor con parámetros
-        public Modelo_Departamentos(int id_Departamento, string nombre, decimal sueldoBase)
+        public Modelo_Departamentos(int id_departamento, int id_empresa, string nombre_departamento, decimal sueldo_base_diario, bool activo)
         {
-            ID_Departamento = id_Departamento;
-            Nombre = nombre;
-            SueldoBase = sueldoBase;
+            this.id_departamento = id_departamento;
+            this.id_empresa = id_empresa;
+            this.nombre_departamento = nombre_departamento;
+            this.sueldo_base_diario = sueldo_base_diario;
+            this.activo = activo;
         }
     }
 

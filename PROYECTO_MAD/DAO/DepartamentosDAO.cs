@@ -39,15 +39,15 @@ namespace PROYECTO_MAD.DAO
             return data;
         }
 
-        public static List<Modelo_Departamentos> sp_get_departamento2(string Dpto)
+        public static List<Modelo_Departamentos> sp_get_departamentos(string buscar)
         {
             Conexion.Connect();
 
             var data = Conexion.db.Query<Modelo_Departamentos>(
-                "SP_GET_DEPATRTAMENTO2",
+                "SP_GET_DEPARTAMENTOS",
                 new
                 {
-                    @Buscar = Dpto,
+                    @buscar = buscar,
 
                 },
                 commandType: CommandType.StoredProcedure);
@@ -64,10 +64,12 @@ namespace PROYECTO_MAD.DAO
             var data = Conexion.db.Query<Modelo_Departamentos>("SP_GESTION_DEPARTAMENTO",
                 new
                 {
-                    @ID_Departamento = dpto.ID_Departamento,
-                    @Nombre = dpto.Nombre,
-                    @SueldoBase = dpto.SueldoBase,
-                    @OPC = OPC
+                    @opcion = OPC,
+                    @id_departamento = dpto.id_departamento,
+                    @id_empresa = dpto.id_empresa,
+                    @nombre_departamento = dpto.nombre_departamento,
+                    @sueldo_base_diario = dpto.sueldo_base_diario,
+                    @activo = dpto.activo
                 },
                 commandType: CommandType.StoredProcedure);
 

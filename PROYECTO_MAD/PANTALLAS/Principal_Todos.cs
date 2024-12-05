@@ -83,27 +83,31 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Principal_Todos_Load(object sender, EventArgs e)
         {
-            if (Sesion.empleado.id_puesto != 1002)
+            switch (Sesion.empleado.id_puesto)
             {
-                BTN_EMP.Enabled = false;
+                case 4:
+                    break;
+                case 5: // Gerente
+                    BTN_EMP.Enabled = false;
+                    break;
+                case 6: // Empleado
+                    BTN_GESDEP.Enabled = false;
+                    BTN_GESEMPL.Enabled = false;
+                    BTN_GESEMPR.Enabled = false;
+                    BTN_GESPUES.Enabled = false;
+                    BTN_NOM.Enabled = false;
+                    BTN_NOMGEN.Enabled = false;
+                    BTN_PERC.Enabled = false;
+                    BTN_PUES.Enabled = false;
+                    break;
             }
-            else
-            {
-                BTN_GESDEP.Enabled = false;
-                BTN_GESEMPL.Enabled = false;
-                BTN_GESEMPR.Enabled = false;
-                BTN_GESPUES.Enabled = false;
-                BTN_NOM.Enabled = false;
-                BTN_NOMGEN.Enabled = false;
-                BTN_PERC.Enabled = false;
-                BTN_PUES.Enabled = false;
 
-            }
-            string nombreCompleto = $"{Sesion.empleado.nombre} {Sesion.empleado.apellido_paterno} {Sesion.empleado.apellido_materno}";
-            LB_NOMBRE.Text = nombreCompleto;
-            string PuestoLabel = Convert.ToString(Sesion.empleado.id_puesto);
+        
+            LB_NOMBRE.Text = $"Empleado: {Sesion.empleado.nombre} {Sesion.empleado.apellido_paterno} {Sesion.empleado.apellido_materno}";
+            LB_PUESTO.Text = $"Puesto: {Sesion.puesto.nombre_puesto.ToUpper()}";
+            LB_DEPTO.Text = $"Departamento: {Sesion.departamento.nombre_departamento}";
+            LB_EMPRESA.Text = $"Empresa: WAX";
 
-            LB_PUESTO.Text = PuestoLabel;
         }
 
         private void BTN_LOGOUT_Click(object sender, EventArgs e)
