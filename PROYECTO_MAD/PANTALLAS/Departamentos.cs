@@ -17,7 +17,7 @@ namespace PROYECTO_MAD.PANTALLAS
     {
         List<Modelo_Departamentos> departamentosData = new List<Modelo_Departamentos>();
         Modelo_Departamentos departamentoSeleccionado = new Modelo_Departamentos();
-        int sel_idDpto = -1;
+        //int sel_idDpto = -1;
         int sel_numRow = -1;
 
         public Departamentos()
@@ -27,8 +27,8 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Departamentos_Load(object sender, EventArgs e)
         {
-            TB_DEP.Text = "";
-            TB_SUELDO.Text = "";
+            TB_DEP.Text = string.Empty;
+            TB_SUELDO.Text = string.Empty;
             BTN_ADD.Enabled = true;
             BTN_EDIT.Enabled = false;
             BTN_ELIM.Enabled = false;
@@ -57,7 +57,7 @@ namespace PROYECTO_MAD.PANTALLAS
             if (sel_numRow < 0)
                 return;
 
-            sel_idDpto = int.Parse(DG_2.Rows[sel_numRow].Cells["id_departamento"].Value.ToString());
+            int sel_idDpto = int.Parse(DG_2.Rows[sel_numRow].Cells["id_departamento"].Value.ToString());
             departamentoSeleccionado = departamentosData.FirstOrDefault(x => x.id_departamento == sel_idDpto);
 
             TB_DEP.Text = departamentoSeleccionado.nombre_departamento;
@@ -128,7 +128,7 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void BTN_ELIM_Click(object sender, EventArgs e)
         {
-            if (sel_idDpto != -1)
+            if (sel_numRow != -1)
             {
                 Modelo_Departamentos dpto = new Modelo_Departamentos();
                 dpto.id_departamento = departamentoSeleccionado.id_departamento;
@@ -137,7 +137,7 @@ namespace PROYECTO_MAD.PANTALLAS
                 {
                     DepartamentosDAO.sp_gestion_departamento(dpto, "ELIMINAR");
                     MessageBox.Show("El departamento ha sido dado de baja.");
-                    sel_idDpto = -1;
+                    sel_numRow = -1;
 
                     Departamentos_Load(sender, e);
                 }

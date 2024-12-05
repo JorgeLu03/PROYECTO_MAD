@@ -82,11 +82,12 @@ namespace PROYECTO_MAD.DAO
             var data = Conexion.db.Query<Modelo_Puestos>("SP_GESTION_PUESTO",
                 new
                 {
-                    //@ID_Puesto = puesto.ID_Puesto,
-                    //@Nombre = puesto.Nombre,
-                    //@NivelSalarial = puesto.NivelSalarial,
-                    //@ID_Departamento = puesto.ID_Departamento,
-                    //@OPC = OPC
+                    @opcion = OPC,
+                    @id_puesto = puesto.id_puesto,
+                    @id_departamento = puesto.id_departamento,
+                    @nombre_puesto = puesto.nombre_puesto,
+                    @proporcion_sueldo = puesto.proporcion_sueldo,
+                    @activo = puesto.activo,
                 },
                 commandType: CommandType.StoredProcedure);
 
