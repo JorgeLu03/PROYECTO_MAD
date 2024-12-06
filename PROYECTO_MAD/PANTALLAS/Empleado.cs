@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PROYECTO_MAD.DAO;
+using PROYECTO_MAD.Entidad;
+using PROYECTO_MAD.MODELOS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +29,23 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Empleado_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void BTN_IMPRIMIR_Click(object sender, EventArgs e)
+        {
+            Modelo_Salario SalarioBruto= SalarioDAO.sp_get_salario_bruto(30,Sesion.empleado.id_empleado);
+            List<Modelo_Percepcion> percepciones = PercepcionDeduccionDAO.sp_get_percepciones("");
+            List<Modelo_Deduccion> deducciones = PercepcionDeduccionDAO.sp_get_deducciones("");
+            foreach (Modelo_Percepcion item in percepciones) 
+            {
+                //SalarioBruto.Sueldo_Neto = ;
+            }
+            foreach (Modelo_Deduccion item in deducciones) 
+            {
+                //SalarioBruto.Sueldo_Neto = ;
+
+            }
 
         }
     }

@@ -58,6 +58,7 @@
     <Compile Include="DAO\PantallasDAO.cs" />
     <Compile Include="DAO\PercepcionDeduccionDAO.cs" />
     <Compile Include="DAO\PuestosDAO.cs" />
+    <Compile Include="DAO\SalarioDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Entidad\Sesion.cs" />
     <Compile Include="Entidad\Usuario.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="MODELOS\Modelo_Nomina.cs" />
     <Compile Include="MODELOS\Modelo_Percepcion.cs" />
     <Compile Include="MODELOS\Modelo_Puestos.cs" />
+    <Compile Include="MODELOS\Modelo_Salario.cs" />
     <Compile Include="PANTALLAS\Departamentos.cs">
       <SubType>Form</SubType>
     </Compile>
