@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PROYECTO_MAD.DAO;
+using PROYECTO_MAD.Entidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +28,12 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void Empleado_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void BTN_IMPRIMIR_Click(object sender, EventArgs e)
+        {
+            PDF.TEST(Sesion.empleado);
         }
     }
 }

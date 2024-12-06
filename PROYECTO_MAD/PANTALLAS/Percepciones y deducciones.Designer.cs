@@ -39,7 +39,9 @@
             this.TB_MOTIV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BTN_ELIM = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -49,7 +51,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(307, 249);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -134,11 +136,22 @@
             this.BTN_ELIM.Text = "Eliminar";
             this.BTN_ELIM.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(406, 53);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(307, 249);
+            this.dataGridView2.TabIndex = 12;
+            // 
             // Percepciones_y_deducciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 541);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.BTN_ELIM);
             this.Controls.Add(this.TB_MOTIV);
             this.Controls.Add(this.label4);
@@ -154,6 +167,7 @@
             this.Text = "Percepciones_y_deducciones";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Percepciones_y_deducciones_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +186,6 @@
         private System.Windows.Forms.TextBox TB_MOTIV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BTN_ELIM;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

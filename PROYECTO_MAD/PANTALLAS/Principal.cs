@@ -304,5 +304,43 @@ namespace PROYECTO_MAD.PANTALLAS
             return true; // Si todo está bien
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TB_NOM.Text = "";
+            TB_APMAT.Text = "";
+            TB_TEL.Text = "";
+            TB_APPAT.Text = "";
+            TB_CURP.Text = "";
+            TB_EMAIL.Text = "";
+            TB_NUMEMP.Text = "";
+            TB_PSW.Text = "";
+            TB_DOM.Text = "";
+            TB_NSS.Text = "";
+            TB_RFC.Text = "";
+            TB_BANCO.Text = "";
+            TB_NUMCUENTA.Text = "";
+            CB_DPTO.SelectedIndex = -1;
+            CB_PUESTO.SelectedIndex = -1;
+            DTP_FECHNAC.Value = DateTime.Now;
+
+            TB_NOM.Enabled = true;
+            TB_APMAT.Enabled = true;
+            TB_TEL.Enabled = true;
+            TB_APPAT.Enabled = true;
+            TB_CURP.Enabled = true;
+            TB_EMAIL.Enabled = true;
+            TB_NUMEMP.Enabled = true;
+            TB_PSW.Enabled = true;
+            TB_DOM.Enabled = true;
+            TB_NSS.Enabled = true;
+            TB_RFC.Enabled = true;
+            TB_BANCO.Enabled = true;
+            TB_NUMCUENTA.Enabled = true;
+            CB_DPTO.Enabled = true;
+            CB_PUESTO.Enabled = true;
+            DTP_FECHNAC.Enabled = true;
+
+
+        }
     }
 }

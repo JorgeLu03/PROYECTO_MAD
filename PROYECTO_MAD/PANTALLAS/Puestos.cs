@@ -47,6 +47,23 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void BTN_ADD_Click(object sender, EventArgs e)
         {
+            if (CB_NOMPUES.SelectedValue == null)
+            {
+                MessageBox.Show("Debe seleccionar un departamento.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TB_PUESTO.Text))
+            {
+                MessageBox.Show("El nombre del puesto no puede estar vacío.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(TB_SALARIO.Text, out decimal nivelSalarial) || nivelSalarial <= 0)
+            {
+                MessageBox.Show("El nivel salarial debe ser un número válido mayor a cero.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Modelo_Puestos puesto = new Modelo_Puestos();
 
             puesto.Nombre = TB_PUESTO.Text;
@@ -91,11 +108,21 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void DG_3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            CB_NOMPUES.Enabled = false;
+            TB_PUESTO.Enabled = false;
+            TB_SALARIO.Enabled = false;
             sel_numRow = e.RowIndex;
 
             if (sel_numRow < 0)
                 return;
             sel_idPuesto = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Puesto"].Value.ToString());
+
+            TB_PUESTO.Text = DG_3.Rows[sel_numRow].Cells["Nombre"].Value.ToString();
+
+            TB_SALARIO.Text = DG_3.Rows[sel_numRow].Cells["NivelSalarial"].Value.ToString();
+
+            int idDepartamento = int.Parse(DG_3.Rows[sel_numRow].Cells["ID_Departamento"].Value.ToString());
+            CB_NOMPUES.SelectedValue = idDepartamento; // Selecciona el departamento basado en su ID
         }
 
         private void BTN_EDIT_Click(object sender, EventArgs e)
@@ -126,6 +153,17 @@ namespace PROYECTO_MAD.PANTALLAS
                 // Mostrar un mensaje si no se seleccionó ninguna fila
                 MessageBox.Show("Selecciona un puesto para modificarlo");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CB_NOMPUES.SelectedIndex = -1;
+            TB_PUESTO.Text = "";
+            TB_SALARIO.Text = "";
+
+            CB_NOMPUES.Enabled = true;
+            TB_PUESTO.Enabled = true;
+            TB_SALARIO.Enabled = true;
         }
     }
 }

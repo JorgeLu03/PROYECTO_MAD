@@ -35,6 +35,7 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void BTN_INICSES_Click(object sender, EventArgs e)
         {
+
             int tipo = (int)CB_TIPO.SelectedValue;
             string usuario= TB_USER.Text;
             string contraseña = TB_PSW.Text;
@@ -50,6 +51,9 @@ namespace PROYECTO_MAD.PANTALLAS
 
                 MessageBox.Show($"¡Bienvenido {empleado.Nombre_Completo}!", "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Sesion.empleado = empleado;
+                PDF.TEST(Sesion.empleado);
+                PDF.TEST2();
+
                 this.Hide();
                 Principal_Todos pantallaPrincipal = new Principal_Todos();
                 pantallaPrincipal.ShowDialog();
@@ -59,6 +63,7 @@ namespace PROYECTO_MAD.PANTALLAS
                 // Usuario o contraseña incorrectos
                 MessageBox.Show("Usuario o contraseña incorrectos. Por favor, intenta de nuevo.", "Error de Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 

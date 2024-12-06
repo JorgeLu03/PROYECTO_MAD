@@ -51,14 +51,8 @@
             this.TB_TEL = new System.Windows.Forms.TextBox();
             this.TB_EMAIL = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TB_CP = new System.Windows.Forms.TextBox();
-            this.TB_COL = new System.Windows.Forms.TextBox();
-            this.TB_NUM = new System.Windows.Forms.TextBox();
             this.TB_CALLE = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.BTN_IMPRIMIR = new System.Windows.Forms.Button();
             this.BTN_EDIT = new System.Windows.Forms.Button();
@@ -250,27 +244,6 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Domicilio";
             // 
-            // TB_CP
-            // 
-            this.TB_CP.Location = new System.Drawing.Point(265, 431);
-            this.TB_CP.Name = "TB_CP";
-            this.TB_CP.Size = new System.Drawing.Size(100, 22);
-            this.TB_CP.TabIndex = 26;
-            // 
-            // TB_COL
-            // 
-            this.TB_COL.Location = new System.Drawing.Point(265, 398);
-            this.TB_COL.Name = "TB_COL";
-            this.TB_COL.Size = new System.Drawing.Size(100, 22);
-            this.TB_COL.TabIndex = 27;
-            // 
-            // TB_NUM
-            // 
-            this.TB_NUM.Location = new System.Drawing.Point(265, 365);
-            this.TB_NUM.Name = "TB_NUM";
-            this.TB_NUM.Size = new System.Drawing.Size(100, 22);
-            this.TB_NUM.TabIndex = 28;
-            // 
             // TB_CALLE
             // 
             this.TB_CALLE.Location = new System.Drawing.Point(265, 332);
@@ -286,33 +259,6 @@
             this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 30;
             this.label6.Text = "Calle";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(371, 437);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 16);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "CP";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(371, 404);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 16);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Colonia";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(371, 368);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 16);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "Número";
             // 
             // label17
             // 
@@ -331,6 +277,7 @@
             this.BTN_IMPRIMIR.TabIndex = 35;
             this.BTN_IMPRIMIR.Text = "Imprimir";
             this.BTN_IMPRIMIR.UseVisualStyleBackColor = true;
+            this.BTN_IMPRIMIR.Click += new System.EventHandler(this.BTN_IMPRIMIR_Click);
             // 
             // BTN_EDIT
             // 
@@ -359,14 +306,8 @@
             this.Controls.Add(this.BTN_EDIT);
             this.Controls.Add(this.BTN_IMPRIMIR);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TB_CALLE);
-            this.Controls.Add(this.TB_NUM);
-            this.Controls.Add(this.TB_COL);
-            this.Controls.Add(this.TB_CP);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TB_EMAIL);
             this.Controls.Add(this.TB_TEL);
@@ -424,14 +365,8 @@
         private System.Windows.Forms.TextBox TB_TEL;
         private System.Windows.Forms.TextBox TB_EMAIL;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TB_CP;
-        private System.Windows.Forms.TextBox TB_COL;
-        private System.Windows.Forms.TextBox TB_NUM;
         private System.Windows.Forms.TextBox TB_CALLE;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BTN_IMPRIMIR;
         private System.Windows.Forms.Button BTN_EDIT;

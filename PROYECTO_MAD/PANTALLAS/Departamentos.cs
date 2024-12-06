@@ -38,14 +38,25 @@ namespace PROYECTO_MAD.PANTALLAS
         {
             List<Modelo_Departamentos> departamentosData = DepartamentosDAO.sp_get_departamento2("");
             DG_2.DataSource = departamentosData;
-            TB_DEP.Enabled = false;
-            TB_SUELDO.Enabled = false;
+           
 
 
         }
 
         private void BTN_ADD_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TB_DEP.Text))
+            {
+                MessageBox.Show("El nombre del departamento no puede estar vacío.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar que el campo TB_SUELDO tenga un valor decimal válido
+            if (!decimal.TryParse(TB_SUELDO.Text, out decimal sueldoBase) || sueldoBase <= 0)
+            {
+                MessageBox.Show("El sueldo base debe ser un número mayor a cero.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Modelo_Departamentos dpto = new Modelo_Departamentos();
 
             dpto.Nombre = TB_DEP.Text;
@@ -80,6 +91,8 @@ namespace PROYECTO_MAD.PANTALLAS
 
         private void DG_2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            TB_DEP.Enabled = false;
+            TB_SUELDO.Enabled = false;
             sel_numRow = e.RowIndex;
 
             if (sel_numRow < 0)
@@ -117,6 +130,15 @@ namespace PROYECTO_MAD.PANTALLAS
                 // Mostrar un mensaje si no se seleccionó ninguna fila
                 MessageBox.Show("Selecciona un departamento para modificarlo");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TB_DEP.Text= "";
+            TB_SUELDO.Text = "";
+            TB_DEP.Enabled = true;
+            TB_SUELDO.Enabled = true;
+
         }
     }
 }
