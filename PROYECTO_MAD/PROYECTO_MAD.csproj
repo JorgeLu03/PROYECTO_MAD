@@ -56,6 +56,7 @@
     <Compile Include="DAO\EmpleadoDAO.cs" />
     <Compile Include="DAO\NomGralDAO.cs" />
     <Compile Include="DAO\PantallasDAO.cs" />
+    <Compile Include="DAO\PercepcionDeduccionDAO.cs" />
     <Compile Include="DAO\PuestosDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Entidad\Sesion.cs" />

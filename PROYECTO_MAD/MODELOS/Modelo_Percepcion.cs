@@ -9,26 +9,28 @@ namespace PROYECTO_MAD.MODELOS
     public class Modelo_Percepcion
     {
         // Propiedades
-        public int ID_Percepcion { get; set; }
-        public int ID_Nomina { get; set; }
-        public string Nombre { get; set; }
-        public decimal Monto { get; set; }
-        public bool EsPorcentaje { get; set; }
+        public int id_percepcion { get; set; }
+        public string nombre_percepcion { get; set; }
+        public bool es_porcentaje { get; set; }
+        public decimal monto { get; set; }
+        public bool activo { get; set; }
 
         // Constructor por defecto
         public Modelo_Percepcion()
         {
         }
 
+
         // Constructor con parámetros
-        public Modelo_Percepcion(int id_Percepcion, int id_Nomina, string nombre, decimal monto, bool esPorcentaje)
+        public Modelo_Percepcion(int id_percepcion, string nombre_percepcion, bool es_porcentaje, decimal monto, bool activo)
         {
-            ID_Percepcion = id_Percepcion;
-            ID_Nomina = id_Nomina;
-            Nombre = nombre;
-            Monto = monto;
-            EsPorcentaje = esPorcentaje;
+            this.id_percepcion = id_percepcion;
+            this.nombre_percepcion = nombre_percepcion;
+            this.es_porcentaje = es_porcentaje;
+            this.monto = monto;
+            this.activo = activo;
         }
+
     }
 
 }

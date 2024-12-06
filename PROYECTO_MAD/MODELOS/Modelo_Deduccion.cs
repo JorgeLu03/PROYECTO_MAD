@@ -8,25 +8,25 @@ namespace PROYECTO_MAD.MODELOS
 {
     public class Modelo_Deduccion
     {
-        public int ID_Deduccion { get; set; }
-        public int ID_Nomina { get; set; }
-        public string Nombre { get; set; }
-        public decimal Monto { get; set; }
-        public bool EsPorcentaje { get; set; }
-
+        public int id_deduccion { get; set; }
+        public string nombre_deduccion { get; set; }
+        public bool es_porcentaje { get; set; }
+        public decimal monto { get; set; }
+        public bool activo { get; set; }
         public Modelo_Deduccion()
         {
         }
 
         // Constructor con parámetros
-        public Modelo_Deduccion(int id_Deduccion, int id_Nomina, string nombre, decimal monto, bool esPorcentaje)
+        public Modelo_Deduccion(int id_deduccion, string nombre_deduccion, bool es_porcentaje, decimal monto, bool activo)
         {
-            ID_Deduccion = id_Deduccion;
-            ID_Nomina = id_Nomina;
-            Nombre = nombre;
-            Monto = monto;
-            EsPorcentaje = esPorcentaje;
+            this.id_deduccion = id_deduccion;
+            this.nombre_deduccion = nombre_deduccion;
+            this.es_porcentaje = es_porcentaje;
+            this.monto = monto;
+            this.activo = activo;
         }
+
     }
 
 }
