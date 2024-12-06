@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.DGP = new System.Windows.Forms.DataGridView();
+            this.id_percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.es_porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TB_NOM = new System.Windows.Forms.TextBox();
             this.BTN_ADD = new System.Windows.Forms.Button();
@@ -38,11 +43,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DGD = new System.Windows.Forms.DataGridView();
-            this.id_percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.es_porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_deduccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_decuccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +69,46 @@
             this.monto,
             this.activo});
             this.DGP.Location = new System.Drawing.Point(5, 20);
-            this.DGP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGP.Margin = new System.Windows.Forms.Padding(2);
             this.DGP.Name = "DGP";
             this.DGP.RowHeadersWidth = 51;
             this.DGP.RowTemplate.Height = 24;
             this.DGP.Size = new System.Drawing.Size(485, 218);
             this.DGP.TabIndex = 0;
             this.DGP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGP_CellClick);
+            // 
+            // id_percepcion
+            // 
+            this.id_percepcion.DataPropertyName = "id_percepcion";
+            this.id_percepcion.HeaderText = "ID PERCEPCION";
+            this.id_percepcion.Name = "id_percepcion";
+            this.id_percepcion.Visible = false;
+            // 
+            // nombre_percepcion
+            // 
+            this.nombre_percepcion.DataPropertyName = "nombre_percepcion";
+            this.nombre_percepcion.HeaderText = "NOMBRE";
+            this.nombre_percepcion.Name = "nombre_percepcion";
+            this.nombre_percepcion.Width = 200;
+            // 
+            // es_porcentaje
+            // 
+            this.es_porcentaje.DataPropertyName = "es_porcentaje";
+            this.es_porcentaje.HeaderText = "ES PORCENTAJE";
+            this.es_porcentaje.Name = "es_porcentaje";
+            // 
+            // monto
+            // 
+            this.monto.DataPropertyName = "monto";
+            this.monto.HeaderText = "MONTO";
+            this.monto.Name = "monto";
+            // 
+            // activo
+            // 
+            this.activo.DataPropertyName = "activo";
+            this.activo.HeaderText = "ACTIVO";
+            this.activo.Name = "activo";
+            this.activo.Visible = false;
             // 
             // label2
             // 
@@ -90,7 +123,7 @@
             // TB_NOM
             // 
             this.TB_NOM.Location = new System.Drawing.Point(175, 348);
-            this.TB_NOM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NOM.Margin = new System.Windows.Forms.Padding(2);
             this.TB_NOM.Name = "TB_NOM";
             this.TB_NOM.Size = new System.Drawing.Size(183, 20);
             this.TB_NOM.TabIndex = 5;
@@ -98,7 +131,7 @@
             // BTN_ADD
             // 
             this.BTN_ADD.Location = new System.Drawing.Point(190, 444);
-            this.BTN_ADD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_ADD.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_ADD.Name = "BTN_ADD";
             this.BTN_ADD.Size = new System.Drawing.Size(56, 19);
             this.BTN_ADD.TabIndex = 6;
@@ -109,7 +142,7 @@
             // BTN_ELIM
             // 
             this.BTN_ELIM.Location = new System.Drawing.Point(292, 444);
-            this.BTN_ELIM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_ELIM.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_ELIM.Name = "BTN_ELIM";
             this.BTN_ELIM.Size = new System.Drawing.Size(56, 19);
             this.BTN_ELIM.TabIndex = 11;
@@ -171,39 +204,6 @@
             this.DGD.Size = new System.Drawing.Size(485, 218);
             this.DGD.TabIndex = 0;
             this.DGD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGD_CellClick);
-            // 
-            // id_percepcion
-            // 
-            this.id_percepcion.DataPropertyName = "id_percepcion";
-            this.id_percepcion.HeaderText = "ID PERCEPCION";
-            this.id_percepcion.Name = "id_percepcion";
-            this.id_percepcion.Visible = false;
-            // 
-            // nombre_percepcion
-            // 
-            this.nombre_percepcion.DataPropertyName = "nombre_percepcion";
-            this.nombre_percepcion.HeaderText = "NOMBRE";
-            this.nombre_percepcion.Name = "nombre_percepcion";
-            this.nombre_percepcion.Width = 200;
-            // 
-            // es_porcentaje
-            // 
-            this.es_porcentaje.DataPropertyName = "es_porcentaje";
-            this.es_porcentaje.HeaderText = "ES PORCENTAJE";
-            this.es_porcentaje.Name = "es_porcentaje";
-            // 
-            // monto
-            // 
-            this.monto.DataPropertyName = "monto";
-            this.monto.HeaderText = "MONTO";
-            this.monto.Name = "monto";
-            // 
-            // activo
-            // 
-            this.activo.DataPropertyName = "activo";
-            this.activo.HeaderText = "ACTIVO";
-            this.activo.Name = "activo";
-            this.activo.Visible = false;
             // 
             // id_deduccion
             // 
@@ -304,7 +304,7 @@
             this.Controls.Add(this.BTN_ADD);
             this.Controls.Add(this.TB_NOM);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Percepciones_y_deducciones";
             this.Text = "Percepciones_y_deducciones";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Percepciones_y_deducciones_FormClosed);
