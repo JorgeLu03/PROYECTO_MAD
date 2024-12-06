@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using PROYECTO_MAD.CONEXIÓN;
+using PROYECTO_MAD.Entidad;
 using PROYECTO_MAD.MODELOS;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PROYECTO_MAD.DAO
 {
@@ -16,29 +18,32 @@ namespace PROYECTO_MAD.DAO
         {
             Conexion.Connect();
 
-            //var data = Conexion.db.Query<Modelo_Empleados>("SP_GESTION_EMPLEADO",
-            //    new
-            //    {
-            //        @Num_Empleado = empleado.Num_Empleado,
-            //        @Nombre_Completo = empleado.Nombre_Completo,
-            //        @Fecha_Nac = empleado.Fecha_Nac,
-            //        @CURP = empleado.CURP,
-            //        @Email = empleado.Email,
-            //        @ApellidoMaterno = empleado.ApellidoMaterno,
-            //        @ApellidoPaterno = empleado.ApellidoPaterno,
-            //        @NSS = empleado.NSS,
-            //        @RFC = empleado.RFC,
-            //        @Telefono = empleado.Telefono,
-            //        @Contraseña = empleado.Contraseña,
-            //        @DomicilioCompleto = empleado.DomicilioCompleto,
-            //        @Banco = empleado.Banco,
-            //        @FechaIngreso = empleado.FechaIngreso,
-            //        @PuestoID = empleado.PuestoID,
-            //        @DepartamentoID = empleado.DepartamentoID,
-            //        @NumeroCuenta = empleado.NumeroCuenta,
-            //        @OPC = OPC
-            //    },
-            //    commandType: CommandType.StoredProcedure);
+            var data = Conexion.db.Query<Modelo_Empleados>("SP_GESTION_EMPLEADO",
+                new
+                {
+                    @opcion = OPC,
+                    @id_empleado = empleado.id_empleado,
+                    @id_empresa = empleado.id_empresa,
+                    @id_departamento = empleado.id_departamento,
+                    @id_puesto = empleado.id_puesto,
+                    @usuario = empleado.usuario,
+                    @contrasena = empleado.contrasena,
+                    @nombre = empleado.nombre,
+                    @apellido_paterno = empleado.apellido_paterno,
+                    @apellido_materno = empleado.apellido_materno,
+                    @fecha_nacimiento = empleado.fecha_nacimiento,
+                    @curp = empleado.curp,
+                    @nss = empleado.nss,
+                    @rfc = empleado.rfc,
+                    @domicilio = empleado.domicilio,
+                    @banco = empleado.banco,
+                    @numero_cuenta = empleado.numero_cuenta,
+                    @email = empleado.email,
+                    @telefono = empleado.telefono,
+                    @fecha_contratacion = empleado.fecha_contratacion,
+                    @activo = empleado.activo,
+                },
+                commandType: CommandType.StoredProcedure);
 
             Conexion.Disconnect();
         }
