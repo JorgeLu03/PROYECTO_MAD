@@ -16,10 +16,11 @@ namespace PROYECTO_MAD.MODELOS
         public decimal Proporcion_Sueldo { get; set; }
         public decimal Sueldo_Bruto { get; set; }
         public decimal Sueldo_Bruto_Mensual { get; set; }
-        public decimal Sueldo_Neto { get; set; }
+        public decimal percepciones { get; set; }
+        public decimal deducciones { get; set; }
         public decimal Sueldo_Neto_Mensual { get; set; }
 
-        public Modelo_Salario(int iD_Empleado, string nombre, string apellido_Paterno, string apellido_Materno, decimal sueldo_Base_Diario, decimal proporcion_Sueldo, decimal sueldo_Bruto, decimal sueldo_Bruto_Mensual, decimal sueldo_Neto, decimal sueldo_Neto_Mensual)
+        public Modelo_Salario(int iD_Empleado, string nombre, string apellido_Paterno, string apellido_Materno, decimal sueldo_Base_Diario, decimal proporcion_Sueldo, decimal sueldo_Bruto, decimal sueldo_Bruto_Mensual, decimal percepciones, decimal deducciones, decimal sueldo_Neto_Mensual)
         {
             ID_Empleado = iD_Empleado;
             Nombre = nombre;
@@ -29,7 +30,8 @@ namespace PROYECTO_MAD.MODELOS
             Proporcion_Sueldo = proporcion_Sueldo;
             Sueldo_Bruto = sueldo_Bruto;
             Sueldo_Bruto_Mensual = sueldo_Bruto_Mensual;
-            Sueldo_Neto = sueldo_Neto;
+            this.percepciones = percepciones;
+            this.deducciones = deducciones;
             Sueldo_Neto_Mensual = sueldo_Neto_Mensual;
         }
 
