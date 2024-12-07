@@ -67,7 +67,7 @@ namespace PROYECTO_MAD.DAO
                 }
             }
 
-            salario.Sueldo_Neto_Mensual = salario.Sueldo_Bruto_Mensual + percepcionesCalculadas + deduccionesCalculadas;
+            salario.Sueldo_Neto_Mensual = salario.Sueldo_Bruto_Mensual + percepcionesCalculadas - deduccionesCalculadas;
             salario.percepciones = percepcionesCalculadas;
             salario.deducciones = deduccionesCalculadas;
 
