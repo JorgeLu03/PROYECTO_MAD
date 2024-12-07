@@ -1,6 +1,7 @@
 ﻿using PROYECTO_MAD.DAO;
 using PROYECTO_MAD.Entidad;
 using PROYECTO_MAD.MODELOS;
+using PROYECTO_MAD.UTILS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace PROYECTO_MAD.PANTALLAS
             SalarioBruto.percepciones = percepcionesCalculadas;
             SalarioBruto.deducciones = deduccionesCalculadas;
 
-
+            PDF.nominaPDF(SalarioBruto);
 
         }
     }
