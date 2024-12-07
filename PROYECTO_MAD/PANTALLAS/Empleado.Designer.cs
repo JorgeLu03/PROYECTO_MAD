@@ -331,6 +331,7 @@
             this.BTN_IMPRIMIR.TabIndex = 35;
             this.BTN_IMPRIMIR.Text = "Imprimir";
             this.BTN_IMPRIMIR.UseVisualStyleBackColor = true;
+            this.BTN_IMPRIMIR.Click += new System.EventHandler(this.BTN_IMPRIMIR_Click);
             // 
             // BTN_EDIT
             // 
