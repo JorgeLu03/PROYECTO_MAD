@@ -31,8 +31,8 @@
             this.BTN_GENREPORTE = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_BRUTO = new System.Windows.Forms.TextBox();
+            this.TB_NETO = new System.Windows.Forms.TextBox();
             this.DG_1 = new System.Windows.Forms.DataGridView();
             this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,51 +54,71 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_contratacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_MES = new System.Windows.Forms.ComboBox();
             this.Mes = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DTP_AÑO = new System.Windows.Forms.DateTimePicker();
+            this.DG_NOM = new System.Windows.Forms.DataGridView();
+            this.TB_BUSCAR = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.id_nomina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dias_trabajados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo_bruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo_neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DG_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_NOM)).BeginInit();
             this.SuspendLayout();
             // 
             // BTN_GENREPORTE
             // 
-            this.BTN_GENREPORTE.Location = new System.Drawing.Point(614, 284);
+            this.BTN_GENREPORTE.Location = new System.Drawing.Point(460, 285);
+            this.BTN_GENREPORTE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTN_GENREPORTE.Name = "BTN_GENREPORTE";
-            this.BTN_GENREPORTE.Size = new System.Drawing.Size(98, 48);
+            this.BTN_GENREPORTE.Size = new System.Drawing.Size(74, 39);
             this.BTN_GENREPORTE.TabIndex = 8;
             this.BTN_GENREPORTE.Text = "Generar reporte";
             this.BTN_GENREPORTE.UseVisualStyleBackColor = true;
+            this.BTN_GENREPORTE.Click += new System.EventHandler(this.BTN_GENREPORTE_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(577, 137);
+            this.label2.Location = new System.Drawing.Point(433, 167);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Sueldo bruto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(577, 200);
+            this.label3.Location = new System.Drawing.Point(433, 226);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Sueldo neto";
             // 
-            // textBox1
+            // TB_BRUTO
             // 
-            this.textBox1.Location = new System.Drawing.Point(580, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 22);
-            this.textBox1.TabIndex = 12;
+            this.TB_BRUTO.Location = new System.Drawing.Point(435, 193);
+            this.TB_BRUTO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_BRUTO.Name = "TB_BRUTO";
+            this.TB_BRUTO.Size = new System.Drawing.Size(140, 20);
+            this.TB_BRUTO.TabIndex = 12;
             // 
-            // textBox2
+            // TB_NETO
             // 
-            this.textBox2.Location = new System.Drawing.Point(580, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 22);
-            this.textBox2.TabIndex = 13;
+            this.TB_NETO.Location = new System.Drawing.Point(435, 252);
+            this.TB_NETO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NETO.Name = "TB_NETO";
+            this.TB_NETO.Size = new System.Drawing.Size(140, 20);
+            this.TB_NETO.TabIndex = 13;
             // 
             // DG_1
             // 
@@ -124,13 +144,14 @@
             this.telefono,
             this.fecha_contratacion,
             this.activo});
-            this.DG_1.Location = new System.Drawing.Point(15, 45);
-            this.DG_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DG_1.Location = new System.Drawing.Point(11, 50);
+            this.DG_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DG_1.Name = "DG_1";
             this.DG_1.RowHeadersWidth = 51;
             this.DG_1.RowTemplate.Height = 24;
-            this.DG_1.Size = new System.Drawing.Size(537, 330);
+            this.DG_1.Size = new System.Drawing.Size(403, 268);
             this.DG_1.TabIndex = 14;
+            this.DG_1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_1_CellClick);
             // 
             // id_empleado
             // 
@@ -308,40 +329,166 @@
             this.activo.Visible = false;
             this.activo.Width = 125;
             // 
-            // comboBox1
+            // CB_MES
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(580, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 15;
+            this.CB_MES.FormattingEnabled = true;
+            this.CB_MES.Location = new System.Drawing.Point(435, 74);
+            this.CB_MES.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CB_MES.Name = "CB_MES";
+            this.CB_MES.Size = new System.Drawing.Size(140, 21);
+            this.CB_MES.TabIndex = 15;
+            this.CB_MES.SelectedIndexChanged += new System.EventHandler(this.CB_MES_SelectedIndexChanged);
             // 
             // Mes
             // 
             this.Mes.AutoSize = true;
-            this.Mes.Location = new System.Drawing.Point(577, 43);
+            this.Mes.Location = new System.Drawing.Point(433, 48);
+            this.Mes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Mes.Name = "Mes";
-            this.Mes.Size = new System.Drawing.Size(33, 16);
+            this.Mes.Size = new System.Drawing.Size(27, 13);
             this.Mes.TabIndex = 16;
             this.Mes.Text = "Mes";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(433, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Año:";
+            // 
+            // DTP_AÑO
+            // 
+            this.DTP_AÑO.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTP_AÑO.Location = new System.Drawing.Point(435, 134);
+            this.DTP_AÑO.Name = "DTP_AÑO";
+            this.DTP_AÑO.Size = new System.Drawing.Size(140, 20);
+            this.DTP_AÑO.TabIndex = 18;
+            // 
+            // DG_NOM
+            // 
+            this.DG_NOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DG_NOM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_nomina,
+            this.nombre_mes,
+            this.Column1,
+            this.fecha_pago,
+            this.dias_trabajados,
+            this.sueldo_bruto,
+            this.sueldo_neto,
+            this.dataGridViewTextBoxColumn20});
+            this.DG_NOM.Location = new System.Drawing.Point(660, 48);
+            this.DG_NOM.Margin = new System.Windows.Forms.Padding(2);
+            this.DG_NOM.Name = "DG_NOM";
+            this.DG_NOM.RowHeadersWidth = 51;
+            this.DG_NOM.RowTemplate.Height = 24;
+            this.DG_NOM.Size = new System.Drawing.Size(573, 268);
+            this.DG_NOM.TabIndex = 19;
+            // 
+            // TB_BUSCAR
+            // 
+            this.TB_BUSCAR.Location = new System.Drawing.Point(64, 12);
+            this.TB_BUSCAR.Name = "TB_BUSCAR";
+            this.TB_BUSCAR.Size = new System.Drawing.Size(315, 20);
+            this.TB_BUSCAR.TabIndex = 45;
+            this.TB_BUSCAR.TextChanged += new System.EventHandler(this.TB_BUSCAR_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Buscar:";
+            // 
+            // id_nomina
+            // 
+            this.id_nomina.DataPropertyName = "id_nomina";
+            this.id_nomina.HeaderText = "ID NOMINA";
+            this.id_nomina.MinimumWidth = 6;
+            this.id_nomina.Name = "id_nomina";
+            this.id_nomina.Visible = false;
+            this.id_nomina.Width = 125;
+            // 
+            // nombre_mes
+            // 
+            this.nombre_mes.DataPropertyName = "nombre_mes";
+            this.nombre_mes.HeaderText = "Column2";
+            this.nombre_mes.Name = "nombre_mes";
+            this.nombre_mes.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id_empleado";
+            this.Column1.HeaderText = "ID EMPLEADO";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // fecha_pago
+            // 
+            this.fecha_pago.DataPropertyName = "fecha_pago";
+            this.fecha_pago.HeaderText = "FECHA DE PAGO";
+            this.fecha_pago.Name = "fecha_pago";
+            // 
+            // dias_trabajados
+            // 
+            this.dias_trabajados.DataPropertyName = "dias_trabajados";
+            this.dias_trabajados.HeaderText = "DIAS TRABAJADOS";
+            this.dias_trabajados.Name = "dias_trabajados";
+            // 
+            // sueldo_bruto
+            // 
+            this.sueldo_bruto.DataPropertyName = "sueldo_bruto";
+            this.sueldo_bruto.HeaderText = "SUELDO BRUTO";
+            this.sueldo_bruto.MinimumWidth = 6;
+            this.sueldo_bruto.Name = "sueldo_bruto";
+            this.sueldo_bruto.Width = 125;
+            // 
+            // sueldo_neto
+            // 
+            this.sueldo_neto.DataPropertyName = "sueldo_neto";
+            this.sueldo_neto.HeaderText = "SUELDO NETO";
+            this.sueldo_neto.MinimumWidth = 6;
+            this.sueldo_neto.Name = "sueldo_neto";
+            this.sueldo_neto.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "activo";
+            this.dataGridViewTextBoxColumn20.HeaderText = "ACTIVO";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            this.dataGridViewTextBoxColumn20.Width = 125;
+            // 
             // Reporte_nómina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 436);
+            this.ClientSize = new System.Drawing.Size(1244, 354);
+            this.Controls.Add(this.TB_BUSCAR);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.DG_NOM);
+            this.Controls.Add(this.DTP_AÑO);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Mes);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CB_MES);
             this.Controls.Add(this.DG_1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TB_NETO);
+            this.Controls.Add(this.TB_BRUTO);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BTN_GENREPORTE);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Reporte_nómina";
             this.Text = "Reporte_nómina";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reporte_nómina_FormClosed);
+            this.Load += new System.EventHandler(this.Reporte_nómina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DG_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_NOM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,8 +499,8 @@
         private System.Windows.Forms.Button BTN_GENREPORTE;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TB_BRUTO;
+        private System.Windows.Forms.TextBox TB_NETO;
         private System.Windows.Forms.DataGridView DG_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empresa;
@@ -375,7 +522,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_contratacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CB_MES;
         private System.Windows.Forms.Label Mes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DTP_AÑO;
+        private System.Windows.Forms.DataGridView DG_NOM;
+        private System.Windows.Forms.TextBox TB_BUSCAR;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_nomina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dias_trabajados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo_bruto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo_neto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
     }
 }

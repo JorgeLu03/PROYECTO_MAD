@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using Aspose.Pdf.Forms;
+using Dapper;
 using PROYECTO_MAD.CONEXIÓN;
 using PROYECTO_MAD.MODELOS;
 using System;
@@ -116,6 +117,22 @@ namespace PROYECTO_MAD.DAO
             return data.ToList();
         }
 
+        public static List<Modelo_Mes> sp_get_meses()
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Mes>("SP_GET_MESES",
+                new
+                {
+                    
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
+        }
+
         public static void sp_gestion_pdm(string OPC, Modelo_Mes model)
         {
             Conexion.Connect();
@@ -132,6 +149,43 @@ namespace PROYECTO_MAD.DAO
                 commandType: CommandType.StoredProcedure);
 
             Conexion.Disconnect();
+        }
+
+        public static void sp_gestion_nomina(string OPC, Modelo_Nomina model)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Mes>("SP_GESTION_NOMINA",
+                new
+                {
+                    @opcion = OPC,
+                    @id_nomina = model.id_nomina,
+                    @id_empleado = model.id_empleado,
+                    @fecha_pago = model.fecha_pago,
+                    @nombre_mes = model.nombre_mes,
+                    @sueldo_bruto = model.sueldo_bruto,
+                    @sueldo_neto = model.sueldo_neto,
+                    @activo = model.activo
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+        }
+
+        public static List<Modelo_Nomina> sp_get_nomina_empleado(int id_empleado)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Nomina>("SP_GET_NOMINAS_EMPLEADO",
+                new
+                {
+                    //@id_empleado = id_empleado
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
         }
     }
 }
