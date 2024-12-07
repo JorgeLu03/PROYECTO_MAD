@@ -53,7 +53,7 @@
             this.CB_POR = new System.Windows.Forms.CheckBox();
             this.TB_CANT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.CB_LB_MES = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGP)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -164,7 +164,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DGP);
-            this.groupBox1.Location = new System.Drawing.Point(14, 47);
+            this.groupBox1.Location = new System.Drawing.Point(14, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(495, 253);
             this.groupBox1.TabIndex = 13;
@@ -191,7 +191,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.DGD);
-            this.groupBox2.Location = new System.Drawing.Point(518, 47);
+            this.groupBox2.Location = new System.Drawing.Point(518, 40);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(495, 253);
             this.groupBox2.TabIndex = 14;
@@ -306,10 +306,10 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Cantidad:";
             // 
-            // checkedListBox1
+            // CB_LB_MES
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.CB_LB_MES.FormattingEnabled = true;
+            this.CB_LB_MES.Items.AddRange(new object[] {
             "Enero",
             "Febrero",
             "Marzo",
@@ -320,18 +320,18 @@
             "Agosto",
             "Septiembre",
             "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.checkedListBox1.Location = new System.Drawing.Point(437, 332);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(174, 169);
-            this.checkedListBox1.TabIndex = 20;
+            "Noviembre"});
+            this.CB_LB_MES.Location = new System.Drawing.Point(839, 314);
+            this.CB_LB_MES.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CB_LB_MES.Name = "CB_LB_MES";
+            this.CB_LB_MES.Size = new System.Drawing.Size(174, 184);
+            this.CB_LB_MES.TabIndex = 20;
+            this.CB_LB_MES.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CB_LB_MES_ItemCheck);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(435, 314);
+            this.label1.Location = new System.Drawing.Point(837, 296);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 21;
@@ -343,7 +343,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 511);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.CB_LB_MES);
             this.Controls.Add(this.TB_CANT);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CB_POR);
@@ -398,7 +398,7 @@
         private System.Windows.Forms.CheckBox CB_POR;
         private System.Windows.Forms.TextBox TB_CANT;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox CB_LB_MES;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -83,5 +83,55 @@ namespace PROYECTO_MAD.DAO
 
             Conexion.Disconnect();
         }
+
+        public static List<Modelo_Mes> sp_get_meses_percepcion(int id_percepcion)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Mes>("SP_GET_MESES_PERCEPCION",
+                new
+                {
+                    @id_percepcion = id_percepcion,
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
+        }
+
+        public static List<Modelo_Mes> sp_get_meses_deduccion(int id_deduccion)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Mes>("SP_GET_MESES_DEDUCCION",
+                new
+                {
+                    @id_deduccion = id_deduccion,
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+
+            return data.ToList();
+        }
+
+        public static void sp_gestion_pdm(string OPC, Modelo_Mes model)
+        {
+            Conexion.Connect();
+
+            var data = Conexion.db.Query<Modelo_Mes>("SP_GESTION_PDM",
+                new
+                {
+                    @opcion = OPC,
+                    @id_percepcion = model.id_percepcion,
+                    @id_deduccion = model.id_deduccion,
+                    @nombre_mes = model.nombre_mes,
+                    @activo = model.activo
+                },
+                commandType: CommandType.StoredProcedure);
+
+            Conexion.Disconnect();
+        }
     }
 }

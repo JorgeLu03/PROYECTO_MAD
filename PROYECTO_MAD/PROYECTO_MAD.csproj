@@ -142,6 +142,7 @@
     <Compile Include="MODELOS\Modelo_Departamentos.cs" />
     <Compile Include="MODELOS\Modelo_Empresa.cs" />
     <Compile Include="MODELOS\Modelo_HistorialPuesto.cs" />
+    <Compile Include="MODELOS\Modelo_Mes.cs" />
     <Compile Include="MODELOS\Modelo_Nomina.cs" />
     <Compile Include="MODELOS\Modelo_Percepcion.cs" />
     <Compile Include="MODELOS\Modelo_Puestos.cs" />

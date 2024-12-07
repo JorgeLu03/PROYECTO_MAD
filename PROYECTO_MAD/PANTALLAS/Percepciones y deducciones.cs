@@ -16,6 +16,7 @@ namespace PROYECTO_MAD.PANTALLAS
     {
         List<Modelo_Percepcion> percepcionesData = new List<Modelo_Percepcion>();
         List<Modelo_Deduccion> deduccionesData = new List<Modelo_Deduccion>();
+        List<Modelo_Mes> mesesData = new List<Modelo_Mes>();
         Modelo_Percepcion percepcionSeleccionada = null;
         Modelo_Deduccion deduccionSeleccionada = null;
         string seleccion = string.Empty;
@@ -41,6 +42,20 @@ namespace PROYECTO_MAD.PANTALLAS
 
             DGP.DataSource = percepcionesData;
             DGD.DataSource = deduccionesData;
+
+            mesesData = new List<Modelo_Mes>();
+            BindData(CB_LB_MES, mesesData);
+        }
+
+        private void BindData(CheckedListBox listBox, List<Modelo_Mes> data)
+        {
+            listBox.Items.Clear();
+
+            foreach (Modelo_Mes item in data)
+            {
+                listBox.Items.Add(item.nombre_mes); // Agregar el ítem al CheckedListBox
+                listBox.SetItemChecked(listBox.Items.Count - 1, item.activo); // Configurar el estado (true/false)
+            }
         }
 
         private void TB_BUSCAR_TextChanged(object sender, EventArgs e)
@@ -64,6 +79,9 @@ namespace PROYECTO_MAD.PANTALLAS
             int sel_per = int.Parse(DGP.Rows[sel_numRow].Cells["id_percepcion"].Value.ToString());
             percepcionSeleccionada = percepcionesData.FirstOrDefault(x => x.id_percepcion == sel_per);
 
+            mesesData = PercepcionDeduccionDAO.sp_get_meses_percepcion(sel_per);
+            BindData(CB_LB_MES, mesesData);
+
             CB_REG.SelectedIndex = 0;
             TB_NOM.Text = percepcionSeleccionada.nombre_percepcion;
             TB_CANT.Text = percepcionSeleccionada.monto.ToString();
@@ -84,6 +102,9 @@ namespace PROYECTO_MAD.PANTALLAS
 
             int sel_ded = int.Parse(DGD.Rows[sel_numRow].Cells["id_deduccion"].Value.ToString());
             deduccionSeleccionada = deduccionesData.FirstOrDefault(x => x.id_deduccion == sel_ded);
+
+            mesesData = PercepcionDeduccionDAO.sp_get_meses_deduccion(sel_ded);
+            BindData(CB_LB_MES, mesesData);
 
             CB_REG.SelectedIndex = 1;
             TB_NOM.Text = deduccionSeleccionada.nombre_deduccion;
@@ -159,6 +180,29 @@ namespace PROYECTO_MAD.PANTALLAS
                     }
                 }
             }
+        }
+
+        private void CB_LB_MES_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // Obtener el índice del ítem que cambió
+            int index = e.Index;
+
+            // Obtener el estado actual y el nuevo estado
+            bool isChecked = e.NewValue == CheckState.Checked;
+
+            // Obtener el texto del ítem
+            string itemText = CB_LB_MES.Items[index].ToString();
+            //MessageBox.Show($"Ítem: {itemText}\nEstado actual: {currentState}\nNuevo estado: {newState}");
+
+            Modelo_Mes data = new Modelo_Mes();
+            data.nombre_mes = itemText;
+            data.id_percepcion = percepcionSeleccionada == null ? 0 : percepcionSeleccionada.id_percepcion;
+            data.id_deduccion = deduccionSeleccionada == null ? 0 : deduccionSeleccionada.id_deduccion;
+            data.activo = isChecked;
+
+            PercepcionDeduccionDAO.sp_gestion_pdm(seleccion, data);
+
+
         }
     }
 }

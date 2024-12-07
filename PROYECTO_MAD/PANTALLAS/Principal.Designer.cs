@@ -33,6 +33,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DG_1 = new System.Windows.Forms.DataGridView();
+            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_contratacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TB_NOM = new System.Windows.Forms.TextBox();
             this.TB_CURP = new System.Windows.Forms.TextBox();
             this.TB_EMAIL = new System.Windows.Forms.TextBox();
@@ -66,26 +86,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.TB_BUSCAR = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rfc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_contratacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DG_1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +161,131 @@
             this.DG_1.Size = new System.Drawing.Size(660, 555);
             this.DG_1.TabIndex = 2;
             this.DG_1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_1_CellClick);
+            // 
+            // id_empleado
+            // 
+            this.id_empleado.DataPropertyName = "id_empleado";
+            this.id_empleado.HeaderText = "NUMERO EMPLEADO";
+            this.id_empleado.Name = "id_empleado";
+            // 
+            // id_empresa
+            // 
+            this.id_empresa.DataPropertyName = "id_empresa";
+            this.id_empresa.HeaderText = "ID EMPRESA";
+            this.id_empresa.Name = "id_empresa";
+            this.id_empresa.Visible = false;
+            // 
+            // id_departamento
+            // 
+            this.id_departamento.DataPropertyName = "id_departamento";
+            this.id_departamento.HeaderText = "DEPARTAMENTO";
+            this.id_departamento.Name = "id_departamento";
+            this.id_departamento.Visible = false;
+            // 
+            // id_puesto
+            // 
+            this.id_puesto.DataPropertyName = "id_puesto";
+            this.id_puesto.HeaderText = "PUESTO";
+            this.id_puesto.Name = "id_puesto";
+            this.id_puesto.Visible = false;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "USUARIO";
+            this.usuario.Name = "usuario";
+            // 
+            // contrasena
+            // 
+            this.contrasena.DataPropertyName = "contrasena";
+            this.contrasena.HeaderText = "CONTRASEÑA";
+            this.contrasena.Name = "contrasena";
+            this.contrasena.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido_paterno
+            // 
+            this.apellido_paterno.DataPropertyName = "apellido_paterno";
+            this.apellido_paterno.HeaderText = "APELLIDO PATERNO";
+            this.apellido_paterno.Name = "apellido_paterno";
+            // 
+            // apellido_materno
+            // 
+            this.apellido_materno.DataPropertyName = "apellido_materno";
+            this.apellido_materno.HeaderText = "APELLIDO MATERNO";
+            this.apellido_materno.Name = "apellido_materno";
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.DataPropertyName = "fecha_nacimiento";
+            this.fecha_nacimiento.HeaderText = "FECHA NACIMIENTO";
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            // 
+            // curp
+            // 
+            this.curp.DataPropertyName = "curp";
+            this.curp.HeaderText = "CURP";
+            this.curp.Name = "curp";
+            // 
+            // nss
+            // 
+            this.nss.DataPropertyName = "nss";
+            this.nss.HeaderText = "NSS";
+            this.nss.Name = "nss";
+            // 
+            // rfc
+            // 
+            this.rfc.DataPropertyName = "rfc";
+            this.rfc.HeaderText = "RFC";
+            this.rfc.Name = "rfc";
+            // 
+            // domicilio
+            // 
+            this.domicilio.DataPropertyName = "domicilio";
+            this.domicilio.HeaderText = "DOMICILIO";
+            this.domicilio.Name = "domicilio";
+            // 
+            // banco
+            // 
+            this.banco.DataPropertyName = "banco";
+            this.banco.HeaderText = "BANCO";
+            this.banco.Name = "banco";
+            // 
+            // numero_cuenta
+            // 
+            this.numero_cuenta.DataPropertyName = "numero_cuenta";
+            this.numero_cuenta.HeaderText = "CUENTA";
+            this.numero_cuenta.Name = "numero_cuenta";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "EMAIL";
+            this.email.Name = "email";
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            // 
+            // fecha_contratacion
+            // 
+            this.fecha_contratacion.DataPropertyName = "fecha_contratacion";
+            this.fecha_contratacion.HeaderText = "FECHA CONTRATACION";
+            this.fecha_contratacion.Name = "fecha_contratacion";
+            // 
+            // activo
+            // 
+            this.activo.DataPropertyName = "activo";
+            this.activo.HeaderText = "ACTIVO";
+            this.activo.Name = "activo";
+            this.activo.Visible = false;
             // 
             // TB_NOM
             // 
@@ -393,7 +518,7 @@
             // 
             // TB_APMAT
             // 
-            this.TB_APMAT.Location = new System.Drawing.Point(22, 256);
+            this.TB_APMAT.Location = new System.Drawing.Point(22, 297);
             this.TB_APMAT.Margin = new System.Windows.Forms.Padding(2);
             this.TB_APMAT.Name = "TB_APMAT";
             this.TB_APMAT.Size = new System.Drawing.Size(163, 20);
@@ -402,7 +527,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 239);
+            this.label16.Location = new System.Drawing.Point(22, 280);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(88, 13);
@@ -411,7 +536,7 @@
             // 
             // TB_APPAT
             // 
-            this.TB_APPAT.Location = new System.Drawing.Point(22, 297);
+            this.TB_APPAT.Location = new System.Drawing.Point(22, 256);
             this.TB_APPAT.Margin = new System.Windows.Forms.Padding(2);
             this.TB_APPAT.Name = "TB_APPAT";
             this.TB_APPAT.Size = new System.Drawing.Size(163, 20);
@@ -420,7 +545,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(22, 280);
+            this.label17.Location = new System.Drawing.Point(22, 239);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(86, 13);
@@ -461,131 +586,6 @@
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 44;
             this.label6.Text = "Buscar:";
-            // 
-            // id_empleado
-            // 
-            this.id_empleado.DataPropertyName = "id_empleado";
-            this.id_empleado.HeaderText = "NUMERO EMPLEADO";
-            this.id_empleado.Name = "id_empleado";
-            // 
-            // id_empresa
-            // 
-            this.id_empresa.DataPropertyName = "id_empresa";
-            this.id_empresa.HeaderText = "ID EMPRESA";
-            this.id_empresa.Name = "id_empresa";
-            this.id_empresa.Visible = false;
-            // 
-            // id_departamento
-            // 
-            this.id_departamento.DataPropertyName = "id_departamento";
-            this.id_departamento.HeaderText = "DEPARTAMENTO";
-            this.id_departamento.Name = "id_departamento";
-            this.id_departamento.Visible = false;
-            // 
-            // id_puesto
-            // 
-            this.id_puesto.DataPropertyName = "id_puesto";
-            this.id_puesto.HeaderText = "PUESTO";
-            this.id_puesto.Name = "id_puesto";
-            this.id_puesto.Visible = false;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "USUARIO";
-            this.usuario.Name = "usuario";
-            // 
-            // contrasena
-            // 
-            this.contrasena.DataPropertyName = "contrasena";
-            this.contrasena.HeaderText = "CONTRASEÑA";
-            this.contrasena.Name = "contrasena";
-            this.contrasena.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.Name = "nombre";
-            // 
-            // apellido_paterno
-            // 
-            this.apellido_paterno.DataPropertyName = "apellido_paterno";
-            this.apellido_paterno.HeaderText = "APELLIDO PATERNO";
-            this.apellido_paterno.Name = "apellido_paterno";
-            // 
-            // apellido_materno
-            // 
-            this.apellido_materno.DataPropertyName = "apellido_materno";
-            this.apellido_materno.HeaderText = "APELLIDO MATERNO";
-            this.apellido_materno.Name = "apellido_materno";
-            // 
-            // fecha_nacimiento
-            // 
-            this.fecha_nacimiento.DataPropertyName = "fecha_nacimiento";
-            this.fecha_nacimiento.HeaderText = "FECHA NACIMIENTO";
-            this.fecha_nacimiento.Name = "fecha_nacimiento";
-            // 
-            // curp
-            // 
-            this.curp.DataPropertyName = "curp";
-            this.curp.HeaderText = "CURP";
-            this.curp.Name = "curp";
-            // 
-            // nss
-            // 
-            this.nss.DataPropertyName = "nss";
-            this.nss.HeaderText = "NSS";
-            this.nss.Name = "nss";
-            // 
-            // rfc
-            // 
-            this.rfc.DataPropertyName = "rfc";
-            this.rfc.HeaderText = "RFC";
-            this.rfc.Name = "rfc";
-            // 
-            // domicilio
-            // 
-            this.domicilio.DataPropertyName = "domicilio";
-            this.domicilio.HeaderText = "DOMICILIO";
-            this.domicilio.Name = "domicilio";
-            // 
-            // banco
-            // 
-            this.banco.DataPropertyName = "banco";
-            this.banco.HeaderText = "BANCO";
-            this.banco.Name = "banco";
-            // 
-            // numero_cuenta
-            // 
-            this.numero_cuenta.DataPropertyName = "numero_cuenta";
-            this.numero_cuenta.HeaderText = "CUENTA";
-            this.numero_cuenta.Name = "numero_cuenta";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "EMAIL";
-            this.email.Name = "email";
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "TELEFONO";
-            this.telefono.Name = "telefono";
-            // 
-            // fecha_contratacion
-            // 
-            this.fecha_contratacion.DataPropertyName = "fecha_contratacion";
-            this.fecha_contratacion.HeaderText = "FECHA CONTRATACION";
-            this.fecha_contratacion.Name = "fecha_contratacion";
-            // 
-            // activo
-            // 
-            this.activo.DataPropertyName = "activo";
-            this.activo.HeaderText = "ACTIVO";
-            this.activo.Name = "activo";
-            this.activo.Visible = false;
             // 
             // Principal
             // 
